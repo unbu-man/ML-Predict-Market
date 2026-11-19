@@ -43,6 +43,7 @@
 | [10 — 1H + 5M Signal Bot specification](docs/10_signal_bot_mvp.md) | Setup states, signals, risk checks and performance evaluation |
 | [11 — Eight-week build and study plan](docs/11_8_week_execution_plan.md) | Weekly schedule, artifacts, acceptance tests and first-session instructions |
 | [12 — Multi-market, five-timeframe and unsupervised learning](docs/12_multimarket_multitimeframe_unsupervised.md) | Generalizable architecture, 1m/5m/1h/4h/1d alignment, regime discovery, nonlinear ML, experiment plan |
+| [13 — 30-day mathematics and Signal Bot build plan](docs/13_30_day_math_signal_bot_plan.md) | Day-by-day tasks, mathematical proofs/tests, clear MVP exit criteria and Google Docs plan |
 
 ## Research and build architecture
 

@@ -38,3 +38,7 @@ See [Chapter XI — Eight-week build and study plan](11_8_week_execution_plan.md
 ## Long-term extension — five timeframes and more markets
 
 The full research target is 1m / 5m / 1h / 4h / 1d with market adapters for future crypto, metals, FX and other lawful, available price feeds. Initial implementation **still begins with 5m + 1h**, on BTC/USD and XAU/USD. Test additions in this order: 4h context, 1d context, 1m execution/timing; then train-only unsupervised regimes; then nonlinear ML. Include each added layer only when it produces measurable, stable improvement after costs in held-out testing. Do not equate more rows, more features or more clusters with higher forecast accuracy. See [Chapter XII](12_multimarket_multitimeframe_unsupervised.md).
+
+## 30-day implementation deadline — bounded MVP
+
+A detailed, 30-session mathematical/engineering plan from **20 Nov to 19 Dec 2026** is documented in [Chapter XIII](13_30_day_math_signal_bot_plan.md). The scope is a testable **signal-only** BTC/USD and XAU/USD research bot with 5m+1h baseline. Five-timeframe feature support is a design target; unsupervised and nonlinear ML are **stretch experiments**, not required for release. Do not mark provider integration or performance complete without evidence.

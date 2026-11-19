@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-19 — 30-day mathematics and engineering build plan
+
+- Added a 30-day daily task plan with mathematical study, code deliverables, unit tests and milestones.
+- Set 20 November–19 December 2026 as an **aspirational engineering MVP schedule**, approximately 150 hours if 5 hours/day.
+- Defined a feasible core: two-market Signal Bot, 1h+5m deterministic rules, full five-timeframe data contract, cost-aware backtesting, local alert journal and demonstration.
+- Unsupervised clustering, XGBoost, extra timeframe ablations are stretch experiments; no claims of proven profitability or all-market production support.
+- Linked a living Google Docs plan and preserved Auto Bot as deferred.
+
+
 ## 2026-11-19 — Multi-market and five-timeframe research goal
 
 - Broaden long-term framework to support future market classes with provider adapters, unit/session metadata and no hardcoded trading assumptions.

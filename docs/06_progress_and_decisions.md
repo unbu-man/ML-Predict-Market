@@ -61,6 +61,7 @@
 | ML-012 | 2026-11-19 | Target all supported market classes in long-term architecture; begin empirical validation with BTC/USD and XAU/USD | Founder wants more reusable signal platform | Confirmed long-term goal, not completed capability |
 | ML-013 | 2026-11-19 | Support 1m, 5m, 1h, 4h, 1d but add each to strategy only after ablation | More context may help but has costs/leakage risks | Research specification |
 | ML-014 | 2026-11-19 | Research unsupervised market regimes and nonlinear predictive models separately | Compare hypothesis to simpler baselines | Proposed experiments |
+| ML-015 | 2026-11-19 | Set a 30-day, 5h/day target for a bounded research-grade Signal Bot MVP including mathematical testing | User requested an achievable full build | Confirmed schedule goal; no implementation completed |
 
 ## Experiments
 
