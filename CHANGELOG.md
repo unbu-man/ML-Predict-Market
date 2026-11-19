@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-19 — AMPE strategy and Day 01 documents prepared
+
+- Added Chapter XV with expected return, conditional variance, optional regime modeling, selective abstention, five-timeframe data rules, evaluation gates and source distinctions.
+- Added Chapter XVI with a dated, actionable 20 Nov 2026 checklist and Chapter XVII target contract template.
+- Kept existing 30-day tracker unchanged; added separate research and Day 01 tracking tabs in Google Sheets.
+- Referenced Cryer & Chan's uploaded TSA book at chapter level without uploading or reproducing copyrighted text.
+- Documented proposals only; no trained model, backtest, deployment, or profitable outcome claimed.
+
+
 ## 2026-11-19 — Prediction engine powering three products
 
 - Clarified that next-move forecasting is the main research goal.

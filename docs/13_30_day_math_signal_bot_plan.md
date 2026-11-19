@@ -335,3 +335,7 @@ A=5m only, B=5m+1h, C=B+4h, D=C+1d, E=D+1m, F=best predeclared baseline+training
 ## Product roadmap clarification — 19 November 2026
 
 The core is a **next-move prediction research model**, assessed against forecasting baselines on unseen chronological data. The Signal Bot is a downstream alert distribution component. After the 30-day MVP, add the custom Indicator and later a separately risk-gated **paper-only** Auto Bot; they are not required by Day 30. See [Chapter XIV](14_prediction_to_three_products.md).
+
+## AMPE mathematics focus — updated 19 November 2026
+
+The original 30-day rows remain useful, but the **Prediction Engine is the actual goal**. Read [Chapter XV](15_adaptive_market_prediction_engine.md) for expected-return, volatility and optional regime design; [Chapter XVI](16_day1_2026_11_20_kickoff.md) for tomorrow's work; and [Chapter XVII](17_forecast_target_contract_template.md) for the target definition template. The existing day-by-day Google Sheet is the tracking source. **GARCH, TAR, K-Means and XGBoost are experiments, not prerequisites to a 30-day completed research MVP.**

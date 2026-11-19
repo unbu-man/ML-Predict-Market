@@ -95,3 +95,7 @@ Do not mark “done” before runnable proof exists. A forecast chart without a 
 ## 2026-11-19 — New product decision
 
 **ML-016:** Build a predictive market engine first. After the 30-day research MVP, reuse its timestamped, horizon-specific forecasts in three product surfaces: automated non-executing signals, chart indicator and future **paper-first** automated execution with independent risk gates. **Status:** planned; none implemented. Follow-on work is in [Chapter XIV](14_prediction_to_three_products.md) and the Google Sheet future-product tab.
+
+## 2026-11-19 — AMPE research design decision
+
+**ML-017:** Record an **unvalidated** adaptive forecasting hypothesis: return/direction model + separate volatility model + optional train-only market regime + calibrated forecast reliability and ABSTAIN behavior. Inspiration: Cryer and Chan's time-series model diagnostics, forecasting, financial volatility and threshold models (Chapters 1, 9, 12, 15). Compare each component against simpler baselines on chronological unseen data. See [Chapter XV](15_adaptive_market_prediction_engine.md) and [Day 01](16_day1_2026_11_20_kickoff.md). **No execution or performance result yet.**

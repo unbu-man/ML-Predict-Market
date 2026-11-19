@@ -45,6 +45,9 @@
 | [12 — Multi-market, five-timeframe and unsupervised learning](docs/12_multimarket_multitimeframe_unsupervised.md) | Generalizable architecture, 1m/5m/1h/4h/1d alignment, regime discovery, nonlinear ML, experiment plan |
 | [13 — 30-day mathematics and Signal Bot build plan](docs/13_30_day_math_signal_bot_plan.md) | Day-by-day tasks, mathematical proofs/tests, clear MVP exit criteria and Google Docs plan |
 | [14 — Prediction engine and three future products](docs/14_prediction_to_three_products.md) | Shared model, Auto Signal, Indicator, and a later paper Auto Bot |
+| [15 — Adaptive Market Prediction Engine](docs/15_adaptive_market_prediction_engine.md) | Return, uncertainty, regime and selective WAIT research, with leakage-safe experiments |
+| [16 — Day 01 kickoff](docs/16_day1_2026_11_20_kickoff.md) | Tasks and acceptance checks for 20 November 2026 |
+| [17 — Forecast target contract template](docs/17_forecast_target_contract_template.md) | Fill before training any model |
 
 ## Research and build architecture
 
@@ -127,3 +130,7 @@ ML-predict-market/
 ## Product direction clarification — 19 November 2026
 
 The research **Prediction Engine** estimates next-horizon direction or return first. Its outputs may later power (1) a non-executing Auto Signal Bot, (2) an explanatory chart Indicator, and (3) a separately risk-gated **paper-only** Auto Bot. These are future modules, not three completed 30-day deliverables. See [Chapter XIV](docs/14_prediction_to_three_products.md) and the future-product tab of the [Google Sheet tracker](https://docs.google.com/spreadsheets/d/1BlK-1Nl9fo4qgpTZ9tEFypvKVsfMJUyX1IYbEKrNqp8/edit).
+
+## Prepared for 20 November 2026
+
+The **Adaptive Market Prediction Engine (AMPE)** is the current mathematical research hypothesis: predict forward return/direction, model volatility/uncertainty separately, optionally study market regimes and validate a selective WAIT policy. This is not yet a trained model or proven trading strategy. See [Chapter XV](docs/15_adaptive_market_prediction_engine.md) and [Day 01 checklist](docs/16_day1_2026_11_20_kickoff.md). The [Google Sheet](https://docs.google.com/spreadsheets/d/1BlK-1Nl9fo4qgpTZ9tEFypvKVsfMJUyX1IYbEKrNqp8/edit) contains separate AMPE and Day 01 tracking tabs while preserving the original 30-day tracker.

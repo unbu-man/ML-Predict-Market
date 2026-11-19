@@ -36,3 +36,7 @@ A probability is not trustworthy just because an ML API returned a number: calib
 | Any future live trading | Explicit authorization, applicable regulation review, security/operational controls; not covered by this plan |
 
 **30-day scope:** complete a bounded research-grade prediction engine with historical evaluation and a non-executing demonstration, not all three full products and not a guarantee of profitable forecasting. Keep the daily Google Sheet tracker in the first tab; the second tab **After 30 Days — Products** is for future status and personal progress notes.
+
+## Research-engine mathematical specification
+
+See [Chapter XV — AMPE](15_adaptive_market_prediction_engine.md) for the central forecast contract and proposed three-component model. The future Auto Signal Bot, Indicator and paper-first Auto Bot consume versioned predictions; they remain separate products and are not all due within the first 30 days.
