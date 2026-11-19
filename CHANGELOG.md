@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-19 — Signal Bot-first research roadmap
+
+- Defer Auto Bot and LLM/NLP integrations from the active MVP.
+- Prioritize reliable 5M and 1H market data, deterministic signal generation, cost-aware backtesting and non-executing signal delivery.
+- Add Chapters X and XI: formal Signal Bot MVP specification and an eight-week development/learning plan.
+- All performance claims remain **unmeasured**; the repository still contains plans, not a working trading bot.
+
+
 ## 2026-11-19 — Update target markets
 
 - Founder selected **BTC/USD** (Bitcoin) and **XAU/USD** (gold) as the two instruments, superseding initial BTC/USDT and EUR/USD defaults.

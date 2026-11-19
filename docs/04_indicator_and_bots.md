@@ -1,3 +1,5 @@
+> **Scope update — 19 November 2026:** The active deliverable is the non-executing Signal Bot. The indicator is a research visualization. The Auto Bot below is preserved as **deferred historical design**, not current build scope. See [Chapters X](10_signal_bot_mvp.md) and [XI](11_8_week_execution_plan.md).
+
 # Chapter IV — Indicator, Signal Bot and Auto Bot
 
 **Status:** Product specs; not implemented.

@@ -16,7 +16,7 @@
 | Forecasting baselines | Not started | Walk-forward fold report |
 | Signal bot | Not started | Message log + dedupe tests |
 | Cost-aware backtest | Not started | Net P&L report |
-| Auto bot | Not started | Paper engine + kill-switch tests |
+| Auto bot | **Deferred — out of current MVP** | Revisit only after explicit product decision |
 | XAU/USD gold quotes | Not started | Gold quote source/type and session report |
 
 ## Working checklist
@@ -32,7 +32,9 @@
 - [ ] Compare with XGBoost using walk-forward testing
 - [ ] Evaluate estimated spread, fees and slippage
 - [ ] Deliver research alerts
-- [ ] Implement independently risk-gated paper orders
+- [x] Auto Bot deferred; no order APIs in current project
+- [ ] Evaluate 1H+5M setups against 5M-only and 1H-only baselines
+- [ ] Record signal outcome, net hypothetical expectancy, drawdown, alert latency and rejection rate per market
 
 ## Decisions (working defaults, not finalized performance claims)
 
@@ -46,6 +48,9 @@
 | ML-006 | 2026-11-18 | Preserve negative/null results | Research integrity | Mandatory |
 | ML-007 | 2026-11-19 | Two markets: BTC/USD and XAU/USD (correcting XAU/USA) | Founder decision | Confirmed scope |
 | ML-008 | 2026-11-19 | Keep shared engine but separate market adapters, costs, sessions and experimental evaluations | Different instrument semantics | Design policy |
+| ML-009 | 2026-11-19 | Prioritize Signal Bot, keep indicator as supporting visualization, defer Auto Bot | Founder decision | Confirmed active scope |
+| ML-010 | 2026-11-19 | Research 1H completed-candle context and 5M entry confirmation | Founder idea; not proven profitable | Hypothesis |
+| ML-011 | 2026-11-19 | Use an eight-week build/study sequence with documented test gates | Practical development proposal | Proposed schedule |
 
 ## Experiments
 
@@ -55,6 +60,7 @@
 | EXP-XAU-001 | XAU/USD baseline versus naive next-hour prediction | Not run | None |
 | EXP-002 | Does XGBoost outperform a well-tuned Logistic Regression baseline? | Not run | None |
 | EXP-003 | Do signals exceed realistic costs in out-of-sample simulation? | Not run | None |
+| EXP-MTF-001 | Does the 1H+5M signal setup outperform a simpler 5M-only rule after costs, separately on both markets? | Not run | None |
 
 ## Copyable session template
 
