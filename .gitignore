@@ -1,0 +1,26 @@
+# Python / Jupyter
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Secrets / credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Private/raw/licensed market data and generated artifacts
+data/*
+!data/.gitkeep
+*.parquet
+*.feather
+models/
+checkpoints/
+logs/
+*.log
