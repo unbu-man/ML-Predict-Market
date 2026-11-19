@@ -49,7 +49,7 @@ RiskEngine may return: APPROVED, REJECTED (with reason), or EXPIRED. The simulat
 - SignalBot: duplicate alerts are not sent twice; stale feeds do not create new alerts.
 - PaperRiskEngine: kill switch, position exposure and daily loss limits always win over a BUY signal.
 - PaperLedger: balances, fills and positions reconcile; retries cannot double-fill.
-- MarketCalendar: FX weekends/holidays and crypto venue interruptions are handled separately.
+- MarketCalendar: XAU/USD provider weekdays, daily breaks, holidays, and crypto BTC/USD venue interruptions are handled separately.
 
 ## Proposed repository directories
 - src/ml_predict_market/data — providers, snapshots and checks
@@ -64,3 +64,10 @@ RiskEngine may return: APPROVED, REJECTED (with reason), or EXPIRED. The simulat
 
 ## Exercise
 Draw a sequence diagram for one completed hourly candle that triggers a candidate BUY but gets rejected by the paper risk engine. Record the rejection reason.
+
+## BTC/USD and XAU/USD have different contracts
+
+- BTC/USD: USD per BTC from a recorded exchange spot venue, optional genuine venue volume, often 24/7.
+- XAU/USD: USD per troy ounce from a documented gold quote provider; session breaks, quote type and potentially missing/non-comparable volume.
+- Both: source ID, quote type, UTC candle close, bid/ask availability, price precision and market-specific session calendar are required metadata.
+- Backtest with instrument-appropriate fees, spreads and slippage. If using gold CFD price references, disclose that simulated execution/financing assumptions are **not** physical-gold ownership.

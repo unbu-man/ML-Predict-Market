@@ -27,7 +27,7 @@ Purpose: publish research alerts, not execute trades.
 **Input:** a versioned SignalEvent from the strategy engine.  
 **Output example:**
 
-    [PAPER/RESEARCH] BTC/USDT · 1h
+    [PAPER/RESEARCH] BTC/USD · 1h
     Candle closed: 2026-11-19 12:00 UTC
     Candidate: BUY
     Reasons: EMA20>EMA50, Close>EMA20, RSI=54
@@ -56,3 +56,7 @@ Write three unit-test cases:
 1. Indicator returns WAIT for insufficient warm-up data.
 2. Signal Bot sends the same signal at most once.
 3. Paper Auto Bot rejects a BUY if the kill switch is active.
+
+## Both markets, one system
+
+One indicator, signal bot and paper-only auto bot support BTC/USD and XAU/USD using the same signal schema. Each instrument has independent signals, stop distances, position sizes, quote provenance and model evaluations. XAU/USD signals must respect provider-defined gold market closures; BTC/USD may continue evaluating during weekends. Never map BTC/USDT stablecoin bars into BTC/USD without explicit conversion and research justification.

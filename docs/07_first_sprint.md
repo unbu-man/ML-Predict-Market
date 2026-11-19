@@ -1,10 +1,10 @@
 # Chapter VII — First Seven-Day Sprint
 
 **Suggested first sprint:** the next seven working sessions after project documentation.  
-**Goal:** reproducible BTC/USDT data inspection and a basic indicator hypothesis; not a trading bot yet.
+**Goal:** reproducible BTC/USD data inspection plus independent XAU/USD provider research and a basic indicator hypothesis; not a trading bot yet.
 
 ## Day 1 — Select and understand market data
-- [ ] Choose a specific crypto exchange/venue and BTC/USDT symbol.
+- [ ] Choose a crypto spot exchange venue with a genuine BTC/USD symbol (not BTC/USDT). Also identify a candidate XAU/USD historical quote provider and its product type.
 - [ ] Review OHLCV, bid/ask, completed hourly candles, UTC and data usage terms.
 - [ ] Record source, coverage, sampling, rate limits and known limitations.
 
@@ -63,4 +63,4 @@ Do not commit .venv or credentials.
 ## Definition of done
 Source is documented; data issues are quantified; EDA and indicators are reproducible; no future information appears in signal features. No claims of model accuracy or profitability are made.
 
-**Week 2 preview:** baseline time-series classification, walk-forward evaluation and the first fee-aware historical strategy replay.
+**Week 2 preview:** audit a separate XAU/USD gold quote source and market calendar; compare both markets with independent baselines and fee-aware replay.

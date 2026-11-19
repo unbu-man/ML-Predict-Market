@@ -5,7 +5,7 @@
 | Phase | Learning and engineering focus | Required acceptance evidence |
 |---|---|---|
 | 0. Foundation | Python environment, Git practices, requirements, risk boundaries | Documented setup + test runner |
-| 1. Historical data | Crypto candle ingestion, manifests, gaps/duplicates/precision | Data quality report + UTC sample |
+| 1. Historical data | BTC/USD and XAU/USD ingestion, independent source manifests and market calendars | Data quality report + UTC sample |
 | 2. EDA | Return distributions, volatility regimes, sessions | Reproducible notebook + charts |
 | 3. Custom indicator | EMA/RSI/ATR + deterministic signal rules | Plot, warm-up tests, no look-ahead |
 | 4. Signal bot | Signal event contract, log, dedupe, expiration | Alert event replay + tests |
@@ -13,11 +13,11 @@
 | 6. Advanced ML | XGBoost, optional LSTM if justified | Comparison, leakage audit, model cards |
 | 7. Backtesting | Cost-aware strategy replay, trade log, P&L | Net return, drawdown, sensitivity analysis |
 | 8. Paper auto bot | Risk gates, order simulation, ledger, kill switch | Idempotency and reconciliation tests |
-| 9. FX extension | EUR/USD feed and provider-specific session/spread rules | Independent FX data and replay tests |
+| 9. Gold market validation | XAU/USD source classification, session, spread and cost assumptions | Separate gold replay and data-quality evidence |
 | 10. Demo product | Dashboard, explanation, monitoring, security review | End-to-end paper-only demonstration |
 
 ## Suggested sequence
-Start small. Do not build a large AI system before proving that your data pipeline is trustworthy. Prefer a single historical BTC/USDT hourly sample and reproducible rules. Only then move from alerts to paper orders.
+Start small. Do not build a large AI system before proving that your data pipeline is trustworthy. Prefer a historical BTC/USD hourly sample, then independently validate XAU/USD gold quotes and reproducible rules. Only then move from alerts to paper orders.
 
 ## Implementation policy
 - Each milestone gets a goal, hypothesis, code, tests, measured results and a changelog entry.

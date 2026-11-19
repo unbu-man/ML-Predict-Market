@@ -6,7 +6,7 @@
 Distinguish a forecast, an indicator, a signal and an execution policy. Translate an idea into engineering requirements with measurable acceptance criteria.
 
 ## Goal
-Research an explainable Forex/crypto market analysis toolkit as a Data Science student. The project eventually contains three products, **powered by one shared data and strategy engine**.
+Research an explainable BTC/USD and XAU/USD market analysis toolkit as a Data Science student. The project eventually contains three products, **powered by one shared data and strategy engine**.
 
 | Product | Role | Initial implementation |
 |---|---|---|
@@ -17,12 +17,12 @@ Research an explainable Forex/crypto market analysis toolkit as a Data Science s
 A forecast estimates a future outcome. An indicator summarizes market observations. A signal is a *candidate decision*. An execution policy adds constraints that may reject the signal entirely.
 
 ## Scope
-- **Initial crypto study:** BTC/USDT spot candles, 1-hour interval, from a recorded venue; ETH/USDT later.
-- **Initial FX study:** EUR/USD from a specified provider; USD/JPY later.
+- **Bitcoin research:** BTC/USD spot candles, 1-hour interval, from one identified exchange with true USD quote currency.
+- **Gold research:** XAU/USD (USD per troy ounce of gold), 1-hour quotes from one documented source. Identify indicative spot, OTC, or CFD-linked quotes accurately; no real execution.
 - **First hypotheses:** EMA20/EMA50 + RSI14 + ATR14; simple ML baselines then Logistic Regression/XGBoost.
 - **First technology:** Python, pandas, NumPy, matplotlib, pytest; FastAPI and a dashboard only after the research core passes tests.
 
-These are starting assumptions, not validated trading parameters. Crypto is often 24/7, whereas FX is driven by session calendars and venue/provider conventions. Spot-FX volume is not the same as exchange volume.
+These are starting assumptions, not validated trading parameters. BTC/USD spot markets are often available 24/7, subject to venue outages. XAU/USD historical quotes have gold-provider-specific weekly sessions, breaks, holidays and sometimes no meaningful volume field.
 
 ## Out of scope for first version
 No real-money orders, customer deposits, custody, leverage, CFDs, perpetual futures, personal advice, copy-trading or profit claims. Production brokerage activities need separate jurisdiction-by-jurisdiction authorization and security review.
@@ -36,4 +36,4 @@ Write a one-paragraph user problem statement: who needs this indicator, which de
 ## Review questions
 1. Why can 60% direction accuracy still lose money after costs?
 2. What separates the signal bot from the auto bot?
-3. Which differences between crypto and FX are represented in the data model?
+3. Which differences between BTC/USD and gold XAU/USD are represented in the data model?

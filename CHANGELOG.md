@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-19 — Update target markets
+
+- Founder selected **BTC/USD** (Bitcoin) and **XAU/USD** (gold) as the two instruments, superseding initial BTC/USDT and EUR/USD defaults.
+- Revised documentation and added a dual-market data plan. Each market requires its own provider, session rules, cost assumptions, and validation reports.
+- Still a documented research project: no validated model, live trading system or tested paper bot.
+
+
 ## 2026-11-19 — Research documentation and learning plan
 
 - Added eight chapter-based documents: vision, architecture, machine learning research, indicator/bot specifications, roadmap, progress, first sprint, and references.

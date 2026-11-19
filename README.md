@@ -1,4 +1,4 @@
-# ML Predict Market — Forex & Crypto Research Lab
+# ML Predict Market — Bitcoin & Gold Research Lab
 
 **Founder / learner project · Started 18 November 2026 · Status: documentation only**
 
@@ -16,8 +16,9 @@ The bots are **separate customer experiences** built on a shared, reproducible *
 
 ## Starting research defaults
 
-- **Crypto:** BTC/USDT, 1-hour candles, spot data from one recorded venue; add ETH/USDT later.
-- **Forex:** EUR/USD from a specified FX quote provider; add USD/JPY later. FX is not a centralized exchange and has session, timezone and spread differences.
+- **BTC/USD:** Bitcoin priced in real USD. Study 1-hour completed crypto-spot candles from an identified USD-quoted venue (Coinbase `BTC-USD` is a candidate, not yet selected or downloaded).
+- **XAU/USD:** Gold quoted in USD per troy ounce. Study independent historical gold quotes from a named provider; label whether they are indicative spot/OTC or broker CFD quotes. XAU/USD is **not** EUR/USD and is not an ordinary fiat-forex cross.
+- **Market design:** Separate data adapters, market calendars, cost models, prediction experiments and paper-risk limits. The indicator, signal bot and auto paper bot share interfaces.
 - **Indicators:** EMA(20/50), RSI(14), ATR(14), with defined rules and no future-candle information.
 - **Models:** Simple baselines first; then Logistic Regression and XGBoost. LSTM/Transformers are later research topics, not automatic improvements.
 - **Validation:** Chronological holdout and walk-forward testing, transaction costs, slippage assumptions, and reproducibility.
@@ -35,11 +36,12 @@ The bots are **separate customer experiences** built on a shared, reproducible *
 | [06 — Progress and decision log](docs/06_progress_and_decisions.md) | Track actual work, experiments, setbacks and next steps |
 | [07 — First sprint](docs/07_first_sprint.md) | Complete a first seven-day research and engineering cycle |
 | [08 — References and glossary](docs/08_references_and_glossary.md) | Essential concepts and authoritative reading links |
+| [09 — BTC/USD and XAU/USD market plan](docs/09_btc_gold_data_plan.md) | Data, units, sessions, model and bot separation |
 
 ## Research and build architecture
 
 ```text
-Crypto exchange candles / FX quote provider
+BTC/USD exchange candles / XAU/USD gold quote provider
                  |
           Raw data storage
                  |
@@ -92,11 +94,13 @@ ML-predict-market/
 4. Record real results (including failures) in the [progress log](docs/06_progress_and_decisions.md). Do not mark work complete merely because it is planned.
 5. Use a pull request with tests and a concise change log for each meaningful milestone.
 
-### Current completion status (18 November 2026)
+### Current completion status (19 November 2026)
 
 - [x] Vision drafted
 - [x] Requirements for three tools drafted
 - [x] Initial scope and evaluation rules documented
+- [x] Update two research instruments to BTC/USD and XAU/USD
+- [ ] Verify separate BTC/USD and XAU/USD data providers
 - [ ] Market data downloaded and verified
 - [ ] Initial EDA notebook executed
 - [ ] Rules tested without look-ahead bias

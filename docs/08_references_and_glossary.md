@@ -9,10 +9,11 @@
 - [scikit-learn TimeSeriesSplit](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html) — sequential validation (extra purging may be needed)
 - [XGBoost](https://xgboost.readthedocs.io/) — gradient boosting
 - [PyTorch](https://pytorch.org/docs/stable/) — optional sequence models
-- [Binance Public Data](https://data.binance.vision/) — example historical crypto venue data; verify usage rights
+- [Coinbase Advanced API](https://coinbase.github.io/coinbase-advanced-py/coinbase.rest.html) — candidate historical BTC-USD product candles; verify product access and rights
 - [CCXT](https://docs.ccxt.com/) — exchange connector library
 - [TradingView Pine Script](https://www.tradingview.com/pine-script-docs/) — custom indicators
-- [OANDA developer portal](https://developer.oanda.com/) — example FX API; access depends on jurisdiction
+- [OANDA developer portal](https://developer.oanda.com/) — candidate XAU/USD historical quote API; account and product access varies
+- [OANDA XAU/USD trading hours](https://www.oanda.com/bvi-en/cfds/hours-of-operation/) — example gold-market calendar for one provider, not a universal schedule
 - [pytest](https://docs.pytest.org/en/stable/) — testing
 
 ## Glossary
@@ -39,3 +40,10 @@
 
 ## Revision exercise
 Choose one glossary term and write **definition → formula → example → typical mistake → test**. Add it to your experiment journal. The repository should remain a reusable technical textbook as well as a portfolio project.
+
+## New market terms
+
+- **BTC/USD:** Bitcoin in US dollars; not the stablecoin-quoted BTC/USDT instrument.
+- **XAU/USD:** Quoted USD value per troy ounce of gold, with price semantics set by the provider.
+- **Spot indicative gold quote vs gold CFD:** Different price/contract concepts; do not confuse a simulated CFD price reference with ownership of physical gold.
+- **Provider market calendar:** Sessions, holidays, DST changes, daily interruptions, and stale-quote policy.
