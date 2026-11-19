@@ -17,6 +17,8 @@
 | Signal bot | Not started | Message log + dedupe tests |
 | Cost-aware backtest | Not started | Net P&L report |
 | Auto bot | **Deferred — out of current MVP** | Revisit only after explicit product decision |
+| Five-timeframe framework | Documented architecture, not implemented | Verify 1m/5m/1h/4h/1d provenance and session boundaries |
+| Unsupervised regimes | Proposed research, not implemented | Define features, training-only preprocessing and OOS assignment method |
 | XAU/USD gold quotes | Not started | Gold quote source/type and session report |
 
 ## Working checklist
@@ -33,6 +35,11 @@
 - [ ] Evaluate estimated spread, fees and slippage
 - [ ] Deliver research alerts
 - [x] Auto Bot deferred; no order APIs in current project
+- [x] Record market-agnostic design and 1m/5m/1h/4h/1d target
+- [ ] Document data volume, provider rates, licensing, session/DST and OHLC aggregation per market
+- [ ] Benchmark 1h+5m, then selectively add 4h, 1d and 1m
+- [ ] Test unsupervised regimes with train-only fitting and genuine OOS assignment
+- [ ] Test whether nonlinear supervised models beat simpler baselines after costs
 - [ ] Evaluate 1H+5M setups against 5M-only and 1H-only baselines
 - [ ] Record signal outcome, net hypothetical expectancy, drawdown, alert latency and rejection rate per market
 
@@ -51,6 +58,9 @@
 | ML-009 | 2026-11-19 | Prioritize Signal Bot, keep indicator as supporting visualization, defer Auto Bot | Founder decision | Confirmed active scope |
 | ML-010 | 2026-11-19 | Research 1H completed-candle context and 5M entry confirmation | Founder idea; not proven profitable | Hypothesis |
 | ML-011 | 2026-11-19 | Use an eight-week build/study sequence with documented test gates | Practical development proposal | Proposed schedule |
+| ML-012 | 2026-11-19 | Target all supported market classes in long-term architecture; begin empirical validation with BTC/USD and XAU/USD | Founder wants more reusable signal platform | Confirmed long-term goal, not completed capability |
+| ML-013 | 2026-11-19 | Support 1m, 5m, 1h, 4h, 1d but add each to strategy only after ablation | More context may help but has costs/leakage risks | Research specification |
+| ML-014 | 2026-11-19 | Research unsupervised market regimes and nonlinear predictive models separately | Compare hypothesis to simpler baselines | Proposed experiments |
 
 ## Experiments
 
@@ -61,6 +71,10 @@
 | EXP-002 | Does XGBoost outperform a well-tuned Logistic Regression baseline? | Not run | None |
 | EXP-003 | Do signals exceed realistic costs in out-of-sample simulation? | Not run | None |
 | EXP-MTF-001 | Does the 1H+5M signal setup outperform a simpler 5M-only rule after costs, separately on both markets? | Not run | None |
+| EXP-MTF-002 | Do incremental 4h, 1d and 1m features improve out-of-sample signal outcomes? | Not run | None |
+| EXP-REGIME-001 | Does a train-fitted unsupervised regime feature improve out-of-sample results? | Not run | None |
+| EXP-NONLINEAR-001 | Does XGBoost with MTF features beat simple supervised models net of costs? | Not run | None |
+| EXP-TRANSFER-001 | Can the same interface validate a third market without hardcoded symbols, calendars or units? | Not run | None |
 
 ## Copyable session template
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-19 — Multi-market and five-timeframe research goal
+
+- Broaden long-term framework to support future market classes with provider adapters, unit/session metadata and no hardcoded trading assumptions.
+- Record required research timeframes: **1m, 5m, 1h, 4h, 1d**; keep the 1h+5m Signal Bot as the first experimentally controlled baseline.
+- Add Chapter XII on completed-candle alignment, OHLC aggregation, unsupervised regime discovery, nonlinear modeling, out-of-sample ablations and future-market adaptation.
+- Preserve Auto Bot as deferred, and explicitly note that more bars and features do not imply better predictions.
+- This remains documentation only: no training, data collection, trading or performance validation has occurred.
+
+
 ## 2026-11-19 — Signal Bot-first research roadmap
 
 - Defer Auto Bot and LLM/NLP integrations from the active MVP.

@@ -4,6 +4,10 @@
 **Product:** Non-executing BTC/USD and XAU/USD Signal Bot, with supporting indicator and performance reporting. **Auto Bot deferred.**
 **Study capacity assumption:** Up to ~5 hours on a study day, adjustable around university. This is a planning guide, not a guaranteed delivery schedule. Aim for focused work 5 days per week; use remaining days to review or rest.
 
+## Scope note: market-independent long-term architecture
+
+The target feature library spans **1m, 5m, 1h, 4h, 1d** and more market types eventually, but the eight-week schedule remains **a focused BTC/USD and XAU/USD Signal Bot pilot, beginning with 5m+1h**. Reserve 1m, 4h, 1d, unsupervised regimes and nonlinear-model comparisons for incremental research after the initial baseline is stable. The separate [Chapter XII](12_multimarket_multitimeframe_unsupervised.md) contains the staged expansion, accuracy caveats and tests. This avoids expanding the MVP into an untestable collection of features.
+
 ## How to use each weekly chapter
 
 For each week: **goal → concepts to study → exact engineering tasks → test cases → GitHub evidence → go/no-go**. Don't move forward solely because a calendar week ended. Record real results and failures in [Chapter VI](06_progress_and_decisions.md), with links to tests, code and reports.

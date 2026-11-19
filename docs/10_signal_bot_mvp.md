@@ -97,3 +97,7 @@ Use walk-forward chronological validation with a held-out final period. Account 
 - [OANDA API](https://developer.oanda.com/rest-live-v20/instrument-ep/) as an example of gold historical market-data APIs; gold access and product type vary.
 
 **Completion status:** Design drafted; all actual tests, data feeds, signals, alerts, and backtest performance **not started**.
+
+## Scope extension — five-timeframe architecture (not five-timeframe strategy yet)
+
+The project now targets 1m / 5m / 1h / 4h / 1d feature availability for supported markets. This chapter is still the **baseline 1h+5m v0.1** experiment. Additional timeframes must be tested as independent research additions, not enabled automatically. Longer-timeframe data must be finalized and available before any shorter-timeframe decision. Cross-provider resampling and session boundaries must be explicit. A train-only regime cluster might later be a feature, not a guaranteed signal or substitute for forward evaluation. See [Chapter XII](12_multimarket_multitimeframe_unsupervised.md).

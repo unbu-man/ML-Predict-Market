@@ -12,7 +12,7 @@
 | 5. Cost-aware backtesting | Compare 5M-only vs 1H+5M and no-signal baselines | Chronological results, costs, drawdown, ambiguity policy |
 | 6. Signal alert journal | States, dedupe, expiry, stale-data and session filtering | Local event log + replay tests |
 | 7. Forward demo signals | Non-executing dashboard or Telegram alert delivery | Latency, alert lifecycle and prospective outcome log |
-| 8. ML improvement research | Logistic Regression/XGBoost; NN only if justified | Walk-forward test vs rule baseline |
+| 8. ML improvement research | Logistic Regression/XGBoost vs rule baseline; unsupervised regime clustering as a separate experiment | Walk-forward and ablation results, train-only clustering |
 | 9. Gold market validation | XAU/USD source classification, daily breaks and quote costs | Separate gold replay and data-quality evidence |
 | 10. Demo review | Monitoring, explanation and reproducibility | End-to-end **signal-only** demo, no order methods |
 
@@ -34,3 +34,7 @@ A research application is not a license to provide regulated brokerage, custody,
 
 ## Detailed schedule
 See [Chapter XI — Eight-week build and study plan](11_8_week_execution_plan.md). Each week ends with a GitHub commit, tests, a progress note and an explicit go/no-go check. The timeline is illustrative and can move with coursework or data-provider constraints.
+
+## Long-term extension — five timeframes and more markets
+
+The full research target is 1m / 5m / 1h / 4h / 1d with market adapters for future crypto, metals, FX and other lawful, available price feeds. Initial implementation **still begins with 5m + 1h**, on BTC/USD and XAU/USD. Test additions in this order: 4h context, 1d context, 1m execution/timing; then train-only unsupervised regimes; then nonlinear ML. Include each added layer only when it produces measurable, stable improvement after costs in held-out testing. Do not equate more rows, more features or more clusters with higher forecast accuracy. See [Chapter XII](12_multimarket_multitimeframe_unsupervised.md).
