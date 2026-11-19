@@ -91,3 +91,7 @@
 **Next action:**  
 
 Do not mark “done” before runnable proof exists. A forecast chart without a held-out comparison is not evidence of predictive ability.
+
+## 2026-11-19 — New product decision
+
+**ML-016:** Build a predictive market engine first. After the 30-day research MVP, reuse its timestamped, horizon-specific forecasts in three product surfaces: automated non-executing signals, chart indicator and future **paper-first** automated execution with independent risk gates. **Status:** planned; none implemented. Follow-on work is in [Chapter XIV](14_prediction_to_three_products.md) and the Google Sheet future-product tab.

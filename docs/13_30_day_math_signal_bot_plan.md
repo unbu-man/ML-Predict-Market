@@ -331,3 +331,7 @@ A=5m only, B=5m+1h, C=B+4h, D=C+1d, E=D+1m, F=best predeclared baseline+training
 - [TradingView repainting concept](https://www.tradingview.com/pine-script-docs/concepts/repainting/)
 
 **Status on document creation:** tasks are *planned*. No data feeds, trained models, backtest results or signal delivery have been verified completed.
+
+## Product roadmap clarification — 19 November 2026
+
+The core is a **next-move prediction research model**, assessed against forecasting baselines on unseen chronological data. The Signal Bot is a downstream alert distribution component. After the 30-day MVP, add the custom Indicator and later a separately risk-gated **paper-only** Auto Bot; they are not required by Day 30. See [Chapter XIV](14_prediction_to_three_products.md).

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-19 — Prediction engine powering three products
+
+- Clarified that next-move forecasting is the main research goal.
+- Added Chapter XIV, documenting Auto Signal Bot, Custom Indicator and separately safety-reviewed paper Auto Bot as future products.
+- Added a second tab to the Google Sheet to track future product work without changing the 30-day daily tasks.
+- No model, alert system or automated execution has been built or validated yet.
+
+
 ## 2026-11-19 — 30-day mathematics and engineering build plan
 
 - Added a 30-day daily task plan with mathematical study, code deliverables, unit tests and milestones.

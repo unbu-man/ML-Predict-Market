@@ -2,7 +2,7 @@
 
 **Founder / learner project · Started 18 November 2026 · Status: documentation only**
 
-> **Long-term goal:** a configurable, non-executing Signal Bot research framework that can be tested on multiple market types. **First validation markets:** BTC/USD and XAU/USD. **Supported research timeframe targets:** 1m, 5m, 1h, 4h, 1d. The Auto Bot remains **deferred**. No strategy is yet validated or implemented.
+> **Long-term goal:** a market-independent prediction research engine powering three future products: automated non-executing signals, a custom market indicator and a separately risk-gated **paper-first** Auto Trading Bot. First research markets: BTC/USD and XAU/USD. Timeframes: 1m, 5m, 1h, 4h, 1d. No model or product is validated or live.
 
 ## Product priorities — 19 November 2026
 
@@ -44,6 +44,7 @@
 | [11 — Eight-week build and study plan](docs/11_8_week_execution_plan.md) | Weekly schedule, artifacts, acceptance tests and first-session instructions |
 | [12 — Multi-market, five-timeframe and unsupervised learning](docs/12_multimarket_multitimeframe_unsupervised.md) | Generalizable architecture, 1m/5m/1h/4h/1d alignment, regime discovery, nonlinear ML, experiment plan |
 | [13 — 30-day mathematics and Signal Bot build plan](docs/13_30_day_math_signal_bot_plan.md) | Day-by-day tasks, mathematical proofs/tests, clear MVP exit criteria and Google Docs plan |
+| [14 — Prediction engine and three future products](docs/14_prediction_to_three_products.md) | Shared model, Auto Signal, Indicator, and a later paper Auto Bot |
 
 ## Research and build architecture
 
@@ -122,3 +123,7 @@ ML-predict-market/
 - [ ] Historical and forward paper-signal outcome reports
 
 **Disclaimer:** This is educational/experimental research, not a licensed brokerage, financial advice, or a guarantee of returns. Actual trading and regulated services require separate legal, operational and risk review.
+
+## Product direction clarification — 19 November 2026
+
+The research **Prediction Engine** estimates next-horizon direction or return first. Its outputs may later power (1) a non-executing Auto Signal Bot, (2) an explanatory chart Indicator, and (3) a separately risk-gated **paper-only** Auto Bot. These are future modules, not three completed 30-day deliverables. See [Chapter XIV](docs/14_prediction_to_three_products.md) and the future-product tab of the [Google Sheet tracker](https://docs.google.com/spreadsheets/d/1BlK-1Nl9fo4qgpTZ9tEFypvKVsfMJUyX1IYbEKrNqp8/edit).
