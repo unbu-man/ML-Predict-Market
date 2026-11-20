@@ -134,3 +134,14 @@ The research **Prediction Engine** estimates next-horizon direction or return fi
 ## Prepared for 20 November 2026
 
 The **Adaptive Market Prediction Engine (AMPE)** is the current mathematical research hypothesis: predict forward return/direction, model volatility/uncertainty separately, optionally study market regimes and validate a selective WAIT policy. This is not yet a trained model or proven trading strategy. See [Chapter XV](docs/15_adaptive_market_prediction_engine.md) and [Day 01 checklist](docs/16_day1_2026_11_20_kickoff.md). The [Google Sheet](https://docs.google.com/spreadsheets/d/1BlK-1Nl9fo4qgpTZ9tEFypvKVsfMJUyX1IYbEKrNqp8/edit) contains separate AMPE and Day 01 tracking tabs while preserving the original 30-day tracker.
+
+## Day 01 implementation underway — 20 November 2026
+
+A [draft forecasting target contract](docs/18_day01_forecast_contract_draft.md), [data provider research](docs/data_source_research.md), and [pure-Python example](examples/day01_targets.py) with [11 synthetic fixture tests](tests/test_day01_targets.py) have been added. To run from repo root:
+
+```bash
+python3 -m unittest discover -s tests -p 'test_day01*.py' -v
+python3 -m examples.day01_targets
+```
+
+**Important:** Tests passed in an isolated assistant environment, not on the user's Mac; real data source access and user signoff remain pending. No trained predictive models exist yet.

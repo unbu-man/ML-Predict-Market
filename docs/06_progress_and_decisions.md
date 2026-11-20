@@ -99,3 +99,13 @@ Do not mark “done” before runnable proof exists. A forecast chart without a 
 ## 2026-11-19 — AMPE research design decision
 
 **ML-017:** Record an **unvalidated** adaptive forecasting hypothesis: return/direction model + separate volatility model + optional train-only market regime + calibrated forecast reliability and ABSTAIN behavior. Inspiration: Cryer and Chan's time-series model diagnostics, forecasting, financial volatility and threshold models (Chapters 1, 9, 12, 15). Compare each component against simpler baselines on chronological unseen data. See [Chapter XV](15_adaptive_market_prediction_engine.md) and [Day 01](16_day1_2026_11_20_kickoff.md). **No execution or performance result yet.**
+
+## 2026-11-20 — Day 01 progress (ML-018)
+
+**Working decision proposed:** forecast exactly +5m and +1h reference log returns at verified 5m bar closes, initially with UP vs NOT_UP binary label and no cross-session/gap target windows. [Draft contract](18_day01_forecast_contract_draft.md). Pending founder review.
+
+**Data source review:** Coinbase Exchange `BTC-USD` and OANDA v20 `XAU_USD` are *candidate adapters* based on official documentation. No actual historical feed, licensing/access rights, source latency or gold instrument eligibility verified. [Source notes](data_source_research.md).
+
+**Math tests:** 11 pure-Python, synthetic fixture unit tests passed in an isolated environment (label arithmetic, bad prices/OHLC, missing interval, market-session change, and publication-time cutoff); code committed. Neither model skill nor live platform correctness established.
+
+**Status:** Day 1 In progress until target approved, provider questions investigated, local tests confirmed, and progress journal completed.
