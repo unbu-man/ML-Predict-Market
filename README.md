@@ -183,3 +183,7 @@ The user reported a successful five-minute BTC/USD EDA run: 2,016 candles, zero 
 ## Mathematical notation in learning chapters
 
 Use GitHub-rendered LaTeX: single-dollar delimiters for inline math and fenced `math` blocks for standalone formulas. Define variables and show worked examples. Keep commands in ordinary code blocks. Read the rendered Markdown in GitHub (not Raw). See [GitHub's math formatting guide](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions).
+
+## Statistical forecasting experiment
+
+[Chapter XXIV](docs/24_statistical_forecasting.md) explains zero-return, AR(1), MA(1) and ARMA(1,1) forecasts, with GitHub-rendered equations, chronological fixed-parameter development replay, diagnostic tests and commands. Five synthetic fixture tests passed in the assistant environment; the real-market run is pending.

@@ -100,3 +100,7 @@ N_{\mathrm{pairs}}=2016-24-12=1980
 ## Next gate
 
 Collect a substantially longer authorized BTC history (and XAU separately), freeze chronological validation/test boundaries before model selection, and purge training rows whose label availability overlaps a later split. Develop all preprocessing on training folds only. Keep this seven-day dataset for smoke tests. Use only manifest feature_columns as X, never targets or timestamp metadata. Report zero-return, training-majority, AR(1), then Logistic/Ridge before XGBoost. No live trading or win rate established.
+
+## Follow-up
+
+[Chapter XXIV — Statistical forecasting](24_statistical_forecasting.md) is the next experiment. It reads audited closes directly to establish statistical benchmarks independently of the engineered features. The feature export still needs local verification before supervised ML.

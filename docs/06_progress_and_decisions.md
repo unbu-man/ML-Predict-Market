@@ -133,3 +133,7 @@ User's local terminal report shows 2,016 five-minute BTC/USD candles, zero gaps,
 ## 2026-11-26 — ML-023: EDA-informed feature starter
 
 Full user-pasted report shows weak return autocorrelation (lag 1 = 0.064) and stronger squared-return dependence (lag 2 = 0.175). Retain AR(1) baseline, investigate rolling volatility and later GARCH; no validated model selection. Added separate close-only feature/label generator with five tests pending execution. See [Chapter XXIII](23_causal_feature_dataset.md). Seven-day sample is development only; original publication latency and raw data not independently verified.
+
+## 2026-11-26 — ML-024: Statistical baseline implementation
+
+Added zero-return, AR(1), MA(1) and ARMA(1,1) 5m/1h forecasts with a separate training-majority direction benchmark, train-only estimation, causal filtering, within-block targets and residual diagnostics. Five synthetic tests passed in the assistant environment. The already-inspected seven-day series is development only. Actual forecast scores, longer history, feature-generation verification, gold access and provider latency remain pending. See [Chapter XXIV](24_statistical_forecasting.md).
