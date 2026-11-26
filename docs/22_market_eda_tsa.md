@@ -45,3 +45,21 @@ Seven days are only a pipeline smoke test. Inspect data integrity and both timef
 Next: causal feature engineering and target generation with explicit replay availability assumptions, contiguous-window checks, chronological purging and baseline comparisons.
 
 See [Chapter XXI](21_first_historical_dataset.md), [Chapter XIX](19_hybrid_selective_forecast_strategy.md), and [Chapter XVIII](18_day01_forecast_contract_draft.md).
+
+
+## First observed BTC/USD smoke-test results — 26 November 2026
+
+Evidence: user's pasted terminal output from the local Mac EDA run for the 13–20 November 2026 UTC, five-minute dataset. The raw CSV, full manifest, full report.json, and plots have not been independently inspected.
+
+- 2,016 received candles, zero missing intervals, 2,016 consecutive candles.
+- 2,015 one-period returns implied by that uninterrupted segment.
+- The EDA script reached its successful report-output message.
+
+| Series | ADF statistic | ADF reported p | KPSS statistic | KPSS reported p |
+|---|---:|---:|---:|---:|
+| Log price | -2.48913889 | 0.11813936 | 5.25940402 | 0.01 (actual p < 0.01 per warning) |
+| Log return | -42.07964180 | 0.0 (numerically very small) | 0.12294484 | 0.10 (actual p > 0.10 per warning) |
+
+At alpha = 0.05, the constant-only ADF fails to reject a unit root for log price and rejects it for returns; KPSS rejects level stationarity for log price but does not reject it for returns. These are consistent with differencing log prices once as a starting model specification. Compare ARMA/AR on log returns with ARIMA(p,1,q) on log price; do not difference returns again automatically. These tests do not establish strict or conditional stationarity, future predictability, or GARCH benefit. The statsmodels future API warnings are not runtime errors; the KPSS warnings identify table bounds.
+
+**Next gate:** inspect actual return ACF/PACF, squared-return ACF, rolling volatility and histogram from report.json and plots. Then prepare past-only features and +5m/+1h targets, after documenting availability assumptions and a purged evaluation protocol. Seven days is a smoke test; collect longer authorized history and reserve a chronological final holdout before model selection. Hourly EDA, XAU access, test-suite results, and publication latency are still unverified. No trading performance established.

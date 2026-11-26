@@ -171,3 +171,7 @@ python3 -m unittest discover -s ./tests -t . -v
 ## Market EDA and TSA
 
 [Chapter XXII](docs/22_market_eda_tsa.md) documents the data audit and exploratory diagnostics. Four new fixture tests passed in the assistant environment; real dataset execution remains pending. Install requirements-eda.txt and run the chapter commands from the repository root.
+
+## First local market-data evidence — 26 November 2026
+
+The user reported a successful five-minute BTC/USD EDA run: 2,016 candles, zero missing intervals. ADF/KPSS support starting with log returns rather than log price in this seven-day sample. [Results and limitations](docs/22_market_eda_tsa.md#first-observed-btcusd-smoke-test-results--26-november-2026). This is a pipeline smoke test, not a validated prediction model.

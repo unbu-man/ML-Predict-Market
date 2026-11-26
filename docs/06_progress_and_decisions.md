@@ -125,3 +125,7 @@ Added bounded Coinbase BTC-USD collection and export with gap report, hash and u
 ## 2026-11-26 — Market EDA/TSA starter
 
 Added CSV/manifest audit, contiguous-segment log-return diagnostics, ADF/KPSS, ACF/PACF, rolling volatility and squared-return ACF, seven plots, and JSON report. Four synthetic-fixture tests passed in assistant environment. Real BTC data and gold provider access remain unverified. See [Chapter XXII](22_market_eda_tsa.md).
+
+## 2026-11-26 — First user-reported BTC EDA success
+
+User's local terminal report shows 2,016 five-minute BTC/USD candles, zero gaps, and successful EDA output. ADF/KPSS are consistent with nonstationary log price and level-stationary log returns in this sample. [Recorded interpretation](22_market_eda_tsa.md#first-observed-btcusd-smoke-test-results--26-november-2026). Evidence is pasted output, not independent CSV/manifest verification. ACF/PACF, squared-return ACF, longer history and hourly/XAU checks remain open. No forecast or trade performance measured.
