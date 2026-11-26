@@ -159,3 +159,7 @@ No guarantee of accuracy, profitability, universally transferable model, product
 - [Editable Google Sheet tracker](https://docs.google.com/spreadsheets/d/1BlK-1Nl9fo4qgpTZ9tEFypvKVsfMJUyX1IYbEKrNqp8/edit)
 
 **Progress on 19 November 2026:** documentation prepared; no experimental results yet.
+
+## Research direction update — 26 November 2026
+
+The founder agreed to [Chapter XIX — Adaptive Hybrid ML + TSA](19_hybrid_selective_forecast_strategy.md). Use its M0–M6 ladder for new experiments; XGBoost is the first advanced candidate; GARCH and regime features must earn inclusion through matched out-of-sample ablation, with selective coverage/cost evaluation. This supersedes older model-priority descriptions, not the original dates, data-quality gates or Day 1 target draft. Complex additions may be deferred beyond Day 30.

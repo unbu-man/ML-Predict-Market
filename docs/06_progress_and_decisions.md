@@ -109,3 +109,7 @@ Do not mark “done” before runnable proof exists. A forecast chart without a 
 **Math tests:** 11 pure-Python, synthetic fixture unit tests passed in an isolated environment (label arithmetic, bad prices/OHLC, missing interval, market-session change, and publication-time cutoff); code committed. Neither model skill nor live platform correctness established.
 
 **Status:** Day 1 In progress until target approved, provider questions investigated, local tests confirmed, and progress journal completed.
+
+## 2026-11-26 — ML-019: Adopt hybrid selective forecast research
+
+Founder agreed to the XGBoost + TSA + optional volatility/regime + selective WAIT direction. See [Chapter XIX](19_hybrid_selective_forecast_strategy.md) for ordered M0–M6 experiments, mathematical contracts and holdout/paper promotion gates. Win rate is secondary to net expectancy, risk, coverage and forecast quality. No numerical win-rate or probability threshold is approved. No source access or trained model is established by this decision. Day 1 target review and local setup remain open.

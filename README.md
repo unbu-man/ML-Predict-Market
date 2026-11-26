@@ -145,3 +145,7 @@ python3 -m examples.day01_targets
 ```
 
 **Important:** Tests passed in an isolated assistant environment, not on the user's Mac; real data source access and user signoff remain pending. No trained predictive models exist yet.
+
+## Current research strategy — 26 November 2026
+
+[Chapter XIX — Adaptive Hybrid ML + TSA](docs/19_hybrid_selective_forecast_strategy.md) is the current experiment specification. XGBoost is the first advanced forecasting candidate after no-skill, classical TSA and simple supervised baselines. GARCH, causal regime features and selective prediction are individually tested additions, not presumed improvements. Preserve Day 1's draft and existing tracker dates; no live trade execution or proven win rate. The earlier 30-day plan remains a bounded engineering MVP.

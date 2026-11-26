@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-26 — Adopt Adaptive Hybrid ML + TSA research direction
+
+- Added Chapter XIX: XGBoost as first advanced candidate; benchmark and ablate GARCH, causal regimes and selective prediction.
+- Clarified evaluation, cost-aware simulation and paper-only promotion gates; no win-rate promise or fixed confidence threshold.
+- Kept original 30-day dates, prior Day 1 evidence and user notes intact. This is a documentation decision, not trained model performance.
+
 ## 2026-11-19 — AMPE strategy and Day 01 documents prepared
 
 - Added Chapter XV with expected return, conditional variance, optional regime modeling, selective abstention, five-timeframe data rules, evaluation gates and source distinctions.

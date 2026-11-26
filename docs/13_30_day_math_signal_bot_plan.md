@@ -339,3 +339,7 @@ The core is a **next-move prediction research model**, assessed against forecast
 ## AMPE mathematics focus — updated 19 November 2026
 
 The original 30-day rows remain useful, but the **Prediction Engine is the actual goal**. Read [Chapter XV](15_adaptive_market_prediction_engine.md) for expected-return, volatility and optional regime design; [Chapter XVI](16_day1_2026_11_20_kickoff.md) for tomorrow's work; and [Chapter XVII](17_forecast_target_contract_template.md) for the target definition template. The existing day-by-day Google Sheet is the tracking source. **GARCH, TAR, K-Means and XGBoost are experiments, not prerequisites to a 30-day completed research MVP.**
+
+## Research direction update — 26 November 2026
+
+The founder agreed to [Chapter XIX — Adaptive Hybrid ML + TSA](19_hybrid_selective_forecast_strategy.md). Use its M0–M6 ladder for new experiments; XGBoost is the first advanced candidate; GARCH and regime features must earn inclusion through matched out-of-sample ablation, with selective coverage/cost evaluation. This supersedes older model-priority descriptions, not the original dates, data-quality gates or Day 1 target draft. Complex additions may be deferred beyond Day 30.
