@@ -153,3 +153,7 @@ User reported GARCH11 had lower QLIKE and variance MSE than both constant and ro
 ## 2026-11-26 — ML-026: supervised baseline implementation
 
 Added four fixed Logistic/Ridge models, 12 allowlisted inputs after removing redundant momentum, chronological strict availability purge, train-only scaling and no-skill probability/return benchmarks. Five synthetic tests passed in the assistant container. Real feature export, scores, matched TSA comparison, longer history and XAU coverage remain pending. See [Chapter XXVI](26_supervised_baselines.md).
+
+## 2026-11-26 — ML-026 local supervised results
+
+User supplied feature manifest and M2 report: 1,980 pairs; expected purged splits; all four supervised models completed. Logistic underperformed prevalence on accuracy, Brier, log loss and AUC in every block. Ridge underperformed training mean in every block. Retain as negative-result benchmarks; no direction-model promotion. Prioritize longer authorized history and frozen holdout before serious selection; fixed XGBoost smoke test may proceed as implementation work. [Results](26_supervised_baselines.md#9-user-reported-m2-results--26-november-2026).

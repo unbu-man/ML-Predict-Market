@@ -133,3 +133,48 @@ Use the actual feature directory, and a fresh output directory for reruns. Outpu
 Review baseline scores, then compare XGBoost with the exact same inputs, splits and anchors, using fixed settings or training-only tuning. Before serious model selection, collect longer authorized data and reserve a fresh chronological holdout. Later evaluate GARCH in a causal historical-fold ablation; do not copy full-sample fitted volatility paths into training. Historical availability, raw source authenticity, XAU coverage and trade results remain unverified. No live orders.
 
 [Chapter XXIII](23_causal_feature_dataset.md) | [Chapter XXV](25_garch_volatility.md)
+
+
+## 9. User-reported M2 results — 26 November 2026
+
+Evidence: user-pasted local feature manifest and supervised report. Source hash matches previous reports. 1,980 pairs, 12 model inputs, observed split counts equal expected: 5m 1184/402/392 (2 purged), 1h 1173/391/392 (24 purged). Both horizons ran through the manifest-verifying loader. The assistant has not independently inspected raw CSVs or individual prediction rows. No final untouched holdout.
+
+### Logistic Regression comparison
+
+| Horizon / block | Model | Accuracy | Brier | Log loss | ROC-AUC |
+|---|---|---:|---:|---:|---:|
+| 5m validation | Logistic | 0.475124 | 0.252769 | 0.698777 | 0.447233 |
+| 5m validation | Prevalence | 0.534826 | 0.249051 | 0.691249 | 0.500000 |
+| 5m replay | Logistic | 0.510204 | 0.252050 | 0.697310 | 0.479878 |
+| 5m replay | Prevalence | 0.525510 | 0.249397 | 0.691941 | 0.500000 |
+| 1h validation | Logistic | 0.552430 | 0.255635 | 0.706623 | 0.479187 |
+| 1h validation | Prevalence | 0.560102 | 0.246623 | 0.686381 | 0.500000 |
+| 1h replay | Logistic | 0.487245 | 0.272544 | 0.741767 | 0.429625 |
+| 1h replay | Prevalence | 0.553571 | 0.247208 | 0.687553 | 0.500000 |
+
+Training UP rates: 0.4814189189 (5m), 0.4552429668 (1h). Logistic underperforms all four classification metrics in every block. Do not flip predicted classes or tune thresholds based on this inspected replay.
+
+### Ridge Regression comparison
+
+| Horizon / block | Model | MAE | RMSE | Sign accuracy |
+|---|---|---:|---:|---:|
+| 5m validation | Ridge | 0.001053991 | 0.001549562 | 0.519900 |
+| 5m validation | Zero | 0.001049708 | 0.001549649 | 0.534826 |
+| 5m validation | Train mean | 0.001045332 | 0.001549500 | 0.534826 |
+| 5m replay | Ridge | 0.001346245 | 0.001851919 | 0.500000 |
+| 5m replay | Zero | 0.001336176 | 0.001849067 | 0.525510 |
+| 5m replay | Train mean | 0.001333881 | 0.001847566 | 0.525510 |
+| 1h validation | Ridge | 0.003839955 | 0.005119213 | 0.544757 |
+| 1h validation | Zero | 0.003304090 | 0.004551452 | 0.560102 |
+| 1h validation | Train mean | 0.003283383 | 0.004543923 | 0.560102 |
+| 1h replay | Ridge | 0.005178641 | 0.006432258 | 0.479592 |
+| 1h replay | Zero | 0.004562075 | 0.006050837 | 0.553571 |
+| 1h replay | Train mean | 0.004552407 | 0.005998628 | 0.553571 |
+
+Training means: -0.0000721606507132 (5m), -0.000826011163926 (1h). Ridge loses to training mean across all four blocks on all reported metrics. Its marginal 5m validation RMSE improvement over zero return is not useful evidence of superiority. All returns are unscaled log returns.
+
+### Coefficient observations and next decision
+
+For 1h Logistic, standardized volatility coefficients are -0.278956 (std_return_6), -0.433606 (std_return_12), +0.729834 (std_return_24). For 5m the largest positive standardized coefficient is mean_return_6 (+0.149299). These are conditional fitted associations, not causal relationships or stable feature importance. Overlapping volatility windows are correlated, and the current short sample cannot distinguish changing relationships, weak signal and estimation noise. Poor out-of-sample performance alone does not prove overfitting, since training scores were not reported.
+
+Keep M2 as negative-result baselines. GARCH remains a promising variance candidate only. Recommended next gate: extend authorized BTC history, with a fresh untouched chronological holdout and purged walk-forward research splits frozen before model selection. Keep this week for smoke testing. M3 XGBoost can be implemented and sanity-tested on this week with fixed shallow trees, then compared against Logistic/Ridge and no-skill baselines on identical anchors on longer data. Do not select a complex model merely because linear models failed. Later M4 causal GARCH and multi-timeframe ablations must earn inclusion. No directional advantage, XAU coverage, verified publication latency or trading results established.

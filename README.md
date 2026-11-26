@@ -203,3 +203,7 @@ Use GitHub-rendered LaTeX: single-dollar delimiters for inline math and fenced `
 ## Supervised ML baselines
 
 [Chapter XXVI](docs/26_supervised_baselines.md) introduces Logistic and Ridge models for 5m and 1h, checked feature/target exports, train-only scaling and strict label purge. Five synthetic tests passed in the assistant container; real-data results remain pending.
+
+## First local supervised ML results — 26 November 2026
+
+[Chapter XXVI results](docs/26_supervised_baselines.md#9-user-reported-m2-results--26-november-2026): verified-loader local run reported by user, all four models completed, no consistent improvement against simple benchmarks. Longer history and untouched holdout required for serious model selection; XGBoost remains an experimental candidate.

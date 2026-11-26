@@ -104,3 +104,7 @@ Collect a substantially longer authorized BTC history (and XAU separately), free
 ## Follow-up
 
 [Chapter XXIV — Statistical forecasting](24_statistical_forecasting.md) is the next experiment. It reads audited closes directly to establish statistical benchmarks independently of the engineered features. The feature export still needs local verification before supervised ML.
+
+## User-reported feature export — 26 November 2026
+
+Manifest reports 2,016 source candles, 1,980 pairs and 15 numerical features. Source SHA256 589ca0a6fb76a9923673c3fe0cfd66fa231848ca913000e497856c6183d91a69; features.csv SHA256 0c9215f24793a3927186fb860fd97c414837e26e25be5ff6480f0097cd2acd78; targets.csv SHA256 9d8719523164b3514825672662c6b4231dfe00d1532bf695efb3622ea00deffa. Subsequent user-reported M2 execution passed the loader and produced expected counts. Raw files and test-suite output not independently inspected. See [Chapter XXVI results](26_supervised_baselines.md#9-user-reported-m2-results--26-november-2026).
