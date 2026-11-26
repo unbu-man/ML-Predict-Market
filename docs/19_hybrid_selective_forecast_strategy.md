@@ -15,15 +15,15 @@ The first 30 days remain an engineering and research MVP. M0–M2 baseline compa
 
 Keep the Day 1 draft: reference-price log return at a confirmed 5m close t, with h=5m or 1h.
 
-\[
+```math
 r_{t,h}=\log(C_{t+h}/C_t),\quad y_{t,h}=\mathbf 1[r_{t,h}>0].
-\]
+```
 
-The binary target is UP versus NOT_UP (which includes exact zero); it is still a draft pending separate confirmation. No future price or label can enter the features. Separate forecast outputs: estimated conditional mean \(\hat\mu_{t,h}\), calibrated probability \(\hat p_{t,h}\) of positive return, and optional conditional scale \(\hat\sigma_{t,h}\). Estimate at the same horizon and using the same information set; distinguish return variance from uncertainty about estimated parameters.
+The binary target is UP versus NOT_UP (which includes exact zero); it is still a draft pending separate confirmation. No future price or label can enter the features. Separate forecast outputs: estimated conditional mean $\hat\mu_{t,h}$, calibrated probability $\hat p_{t,h}$ of positive return, and optional conditional scale $\hat\sigma_{t,h}$. Estimate at the same horizon and using the same information set; distinguish return variance from uncertainty about estimated parameters.
 
 **XGBoost:** fit a classifier to y with binary log loss and a separate return regressor with a documented loss. Regularize shallow trees, select hyperparameters using past-only validation, compare identical features and samples. Avoid expensive unrestricted tuning; use CPU-friendly runs.
 
-**GARCH(1,1):** \(\sigma_{t+1}^2=\omega+\alpha\varepsilon_t^2+\beta\sigma_t^2\). Model conditional variance, not price direction. Check valid fitted parameters, convergence and residual diagnostics; generate forecast scale with information available at each historical decision. For multi-step horizons align the variance forecast with the return horizon; do not simply multiply one-step volatility by 12. Compare to trailing realized-volatility baseline. GARCH features for training the downstream model must also be causal, generated with rolling/expanding estimation or historical cross-fitted predictions, not full-sample fits.
+**GARCH(1,1):** $\sigma_{t+1}^2=\omega+\alpha\varepsilon_t^2+\beta\sigma_t^2$. Model conditional variance, not price direction. Check valid fitted parameters, convergence and residual diagnostics; generate forecast scale with information available at each historical decision. For multi-step horizons align the variance forecast with the return horizon; do not simply multiply one-step volatility by 12. Compare to trailing realized-volatility baseline. GARCH features for training the downstream model must also be causal, generated with rolling/expanding estimation or historical cross-fitted predictions, not full-sample fits.
 
 **Market regime:** start with train-only standardized K-Means or GMM on lagged returns, volatility and trend features. Inspect cluster stability and sample counts; labels such as "trend" or "range" are interpretations, not verified states. HMM and TAR remain later comparisons. HMM state probabilities must be filtered (past/current only), not smoothed using future observations.
 
@@ -49,10 +49,10 @@ Use a direction forecast with explicit zero-return treatment. An initial long ca
 
 Otherwise output WAIT. Report all forecasts and rejected opportunities, not just accepted winners.
 
-\[
+```math
 \text{coverage}=\frac{N_{\rm accepted}}{N_{\rm eligible}},\quad
 \text{selective accuracy}=\frac{N_{\rm correct,accepted}}{N_{\rm accepted}}.
-\]
+```
 
 Define completed simulated trades separately; win rate = positive net P&L trades / completed trades. Define treatment of break-even trades. For realized gross winners W and losses L and a per-trade average cost c, report empirical net expectancy (or compute mean net P&L directly); never subtract fees twice. Report turnover, sample size, payoff ratio, drawdown, cost stress, coverage, and uncertainty intervals. Directional accuracy does not equal trade win rate.
 

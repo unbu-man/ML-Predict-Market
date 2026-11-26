@@ -22,6 +22,6 @@ Check eligible OANDA account access, permitted market-data use and XAU_USD instr
 Only after a successful probe, plan paginated raw retrieval, immutable manifests, session-aware gap auditing, OHLC normalization, publication timestamp policy and causal feature alignment. Historical API responses do not reveal actual original publication latency; do not pretend the retrieval time or candle end establishes exact historical availability. Document conservative replay assumptions and test sensitivity before forecasting.
 
 ## Learning
-A one-hour elapsed target on a 5m grid spans twelve consecutive intervals. Missing timestamps are not zero returns. OHLC validity requires high >= max(open, close) and low <= min(open, close). This is data quality, not model accuracy. No training or order placement yet.
+A one-hour elapsed target on a 5m grid spans twelve consecutive intervals. Missing timestamps are not zero returns. OHLC validity requires $H_t\geq\max(O_t,C_t)$ and $L_t\leq\min(O_t,C_t)$. This is data quality, not model accuracy. No training or order placement yet.
 
 [Strategy](19_hybrid_selective_forecast_strategy.md) | [Day 1 draft](18_day01_forecast_contract_draft.md)

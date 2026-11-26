@@ -10,9 +10,17 @@ For each of BTC/USD and XAU/USD independently, can features observed up to compl
 
 A possible regression target is the forward log return:
 
-    r_(t+1) = ln(P_(t+1) / P_t)
+```math
+r_{t+1}=\ln\left(\frac{P_{t+1}}{P_t}\right)
+```
 
-A direction label is y_t = 1 when r_(t+1) > 0, else 0. The future return is **a label, never a feature**. For signals, a neutral band may be more useful than predicting tiny movements that cannot cover spread and fees.
+A direction label is defined by:
+
+```math
+y_t=\begin{cases}1,&r_{t+1}>0\\0,&r_{t+1}\leq0\end{cases}
+```
+
+ The future return is **a label, never a feature**. For signals, a neutral band may be more useful than predicting tiny movements that cannot cover spread and fees.
 
 ## Data provenance manifest (required)
 Record: provider and venue, symbol, timestamp collection time (UTC), time window, interval, complete-candle policy, timezone conversion, price conventions, missing/duplicate bar counts, licensing and rate limits. Gold XAU/USD volume may be absent or an indicative provider-specific count, not centralized spot traded volume.

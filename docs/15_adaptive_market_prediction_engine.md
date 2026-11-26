@@ -48,17 +48,17 @@ This combination is our **experimental architecture**, not a profitable strategy
 
 At time t, **after** a completed 5-minute candle has genuinely become available, define future horizon h:
 
-\[
+```math
 r_{t,h}=\ln\frac{C_{t+h}}{C_t}.
-\]
+```
 
 The future close is an **outcome label** during backtesting, never an input to the forecast. Start with h = 5 minutes and h = 1 hour. For gold, write down what one hour means across session closures and do not silently advance through non-trading periods.
 
 A simple directional label is:
 
-\[
+```math
 y_{t,h}=\mathbf 1(r_{t,h}>0).
-\]
+```
 
 A NO_EDGE/NEUTRAL band may be added, but its value must be established on training/validation data without looking at final test results. Price-reference returns are NOT executable trade returns.
 
@@ -66,31 +66,31 @@ A NO_EDGE/NEUTRAL band may be added, but its value must be established on traini
 
 Conditional expected forward return:
 
-\[
+```math
 \widehat{\mu}_{t,h}\approx E[r_{t,h}\mid\mathcal F_t].
-\]
+```
 
 Conditional variance, reflecting changing movement scale:
 
-\[
+```math
 \widehat{\sigma}_{t,h}^2\approx\operatorname{Var}(r_{t,h}\mid\mathcal F_t).
-\]
+```
 
 Directional probability, if model is independently calibrated:
 
-\[
+```math
 \widehat{p}_{t,h}=P(r_{t,h}>0\mid\mathcal F_t).
-\]
+```
 
-Here the information set \(\mathcal F_t\) includes only prices and features published by the decision timestamp. These three objects do not automatically create a safe BUY/SELL instruction.
+Here the information set $\mathcal F_t$ includes only prices and features published by the decision timestamp. These three objects do not automatically create a safe BUY/SELL instruction.
 
 ### 3.3 Classical TSA baseline and volatility idea
 
 - Zero expected return: benchmark for an efficient random-walk-like price.
-- AR(1): past-only return benchmark, \(r_t=c+\phi r_{t-1}+\varepsilon_t\), with residual ACF diagnostics.
+- AR(1): past-only return benchmark, $r_t=c+\phi r_{t-1}+\varepsilon_t$, with residual ACF diagnostics.
 - ARMA/ARIMA: optional classical linear comparison if appropriate; not mandatory in a 30-day delivery.
 - Rolling realized volatility: an initial scale estimator from past return windows.
-- **Optional** GARCH(1,1): \(\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2\). This is about volatility, not itself direction.
+- **Optional** GARCH(1,1): $\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$. This is about volatility, not itself direction.
 - **Optional** TAR: threshold-dependent autoregressive dynamics; thresholds must be fitted to training data, and any threshold must be a lagged observable feature.
 - **Optional** K-Means/GMM: historical state clustering; cluster IDs do not automatically mean bullish or bearish.
 

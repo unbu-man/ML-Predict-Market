@@ -179,3 +179,7 @@ The user reported a successful five-minute BTC/USD EDA run: 2,016 candles, zero 
 ## Feature and target engineering
 
 [Chapter XXIII](docs/23_causal_feature_dataset.md) records the user's full EDA findings and introduces a close-only development dataset with separate features and labels, an explicit assumed replay delay, and five fixture tests pending execution. Longer history and purged chronological evaluation are required before model claims.
+
+## Mathematical notation in learning chapters
+
+Use GitHub-rendered LaTeX: single-dollar delimiters for inline math and fenced `math` blocks for standalone formulas. Define variables and show worked examples. Keep commands in ordinary code blocks. Read the rendered Markdown in GitHub (not Raw). See [GitHub's math formatting guide](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions).

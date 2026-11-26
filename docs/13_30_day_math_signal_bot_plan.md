@@ -31,13 +31,50 @@ Stack: Python 3.12/3.13 (as supported locally), pandas, NumPy, matplotlib, httpx
 
 ## Mathematics (learn, implement, test)
 
-- Log return: `r_t = ln(C_t / C_(t-1))` (no future bar).
-- EMA: `EMA_t = alpha*C_t + (1-alpha)*EMA_(t-1)`, `alpha = 2/(n+1)`.
-- True range: `TR_t = max(H-L, abs(H-prev_close), abs(L-prev_close))`; ATR = specified smoothing of TR.
+**Log return (no future bar)**
+
+```math
+r_t=\ln\left(\frac{C_t}{C_{t-1}}\right)
+```
+
+
+**Exponential moving average (EMA)**
+
+```math
+\begin{aligned}\mathrm{EMA}_t&=\alpha C_t+(1-\alpha)\mathrm{EMA}_{t-1}\\\alpha&=\frac{2}{n+1}\end{aligned}
+```
+
+
+**True range**
+
+```math
+\mathrm{TR}_t=\max\left(H_t-L_t,\ |H_t-C_{t-1}|,\ |L_t-C_{t-1}|\right)
+```
+
+ATR is the specified smoothing of true range.
+
 - Rolling realized volatility: standard deviation of **past-only** returns; note session assumptions.
-- Risk distance: `d = abs(entry-reference_stop)`; hypothetical long `R = (exit-entry)/d - costs_in_R`.
-- Expectancy: `E[R] = win_rate*avg_win_R + (1-win_rate)*avg_loss_R - avg_cost_R`.
-- Maximum drawdown: minimum of `equity/running_peak_equity - 1`.
+**Risk distance and hypothetical long return in risk units**
+
+```math
+\begin{aligned}d&=|P_{\mathrm{entry}}-P_{\mathrm{stop}}|\\R_{\mathrm{net}}&=\frac{P_{\mathrm{exit}}-P_{\mathrm{entry}}}{d}-c_R,\quad d>0\end{aligned}
+```
+
+
+**Expectancy** (gross winning mean $W$, signed gross losing mean $L$, win probability $p$, average cost $c$; two-outcome example)
+
+```math
+E[R_{\mathrm{net}}]=pW+(1-p)L-c
+```
+
+
+**Maximum drawdown (signed convention)**
+
+```math
+\mathrm{MDD}_{\mathrm{signed}}=\min_t\left(\frac{E_t}{\max_{u\leq t}E_u}-1\right)
+```
+
+
 - Unsupervised clustering: training-only standardized regimes; clusters ≠ future price labels.
 - Supervised nonlinear: benchmark Logistic Regression then XGBoost on chronological splits.
 - Scientific rule: **more bars or features do not guarantee more predictive value**.
@@ -58,7 +95,7 @@ Stack: Python 3.12/3.13 (as supported locally), pandas, NumPy, matplotlib, httpx
 
 #### Day 02 — 2026-11-21: Math I: market data representation
 
-**Study / math:** OHLC, quote currency, units, log returns r_t=ln(C_t/C_(t−1)).
+**Study / math:** OHLC, quote currency, units, log returns $r_t=\ln(C_t/C_{t-1})$.
 
 **Implementation:** Specify Candle schema with UTC open/close/available-at and bid/ask semantics.
 
@@ -110,7 +147,7 @@ Stack: Python 3.12/3.13 (as supported locally), pandas, NumPy, matplotlib, httpx
 
 #### Day 08 — 2026-11-27: Validation mathematics
 
-**Study / math:** OHLC inequalities H>=max(O,C), L<=min(O,C); missingness and duplicates.
+**Study / math:** OHLC inequalities $H_t\geq\max(O_t,C_t)$, $L_t\leq\min(O_t,C_t)$; missingness and duplicates.
 
 **Implementation:** Implement validators for chronology, duplicate keys, negative/inconsistent prices, incomplete bars.
 
@@ -154,7 +191,7 @@ Stack: Python 3.12/3.13 (as supported locally), pandas, NumPy, matplotlib, httpx
 
 #### Day 13 — 2026-12-02: Math II: EMA and RSI
 
-**Study / math:** EMA_t=alpha*C_t+(1-alpha)*EMA_(t−1), alpha=2/(n+1); RSI gains/losses.
+**Study / math:** $\mathrm{EMA}_t=\alpha C_t+(1-\alpha)\mathrm{EMA}_{t-1}$, $\alpha=2/(n+1)$; RSI gains/losses.
 
 **Implementation:** Implement EMA20/EMA50 and RSI14 with correct warm-up.
 
@@ -162,7 +199,7 @@ Stack: Python 3.12/3.13 (as supported locally), pandas, NumPy, matplotlib, httpx
 
 #### Day 14 — 2026-12-03: Math III: ATR and volatility
 
-**Study / math:** TR_t=max(H-L, abs(H-C_prev), abs(L-C_prev)); ATR smoothing; sigma of past returns.
+**Study / math:** $\mathrm{TR}_t=\max(H_t-L_t,|H_t-C_{t-1}|,|L_t-C_{t-1}|)$; ATR smoothing; sigma of past returns.
 
 **Implementation:** Implement ATR14, rolling realized volatility and normalized ATR/price.
 
@@ -226,7 +263,7 @@ Stack: Python 3.12/3.13 (as supported locally), pandas, NumPy, matplotlib, httpx
 
 #### Day 21 — 2026-12-10: Math IV: expectancy and drawdown
 
-**Study / math:** E[R]=win_rate*avg_win_R+(1-win_rate)*avg_loss_R−cost_R; max drawdown.
+**Study / math:** $E[R_{\mathrm{net}}]=pW+(1-p)L-c$ (signed gross loss $L\leq0$); max drawdown.
 
 **Implementation:** Implement cost-aware hypothetical outcome journal; include bid/ask, commissions, slippage.
 

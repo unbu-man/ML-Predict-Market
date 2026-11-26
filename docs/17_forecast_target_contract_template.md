@@ -18,9 +18,9 @@
 
 ## Outcome variable, not a known prediction
 
-\[
+```math
 r_{t,h}=\ln(C_{t+h}/C_t).
-\]
+```
 
 At a hypothetical current reference close 100000 and a future next 5m close 100100, the training outcome is ~0.0009995. Do not treat this outcome as information available at time t.
 

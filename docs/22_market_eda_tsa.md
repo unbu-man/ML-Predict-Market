@@ -8,16 +8,55 @@ Audit the raw data before fitting models. A checksum confirms that a CSV matches
 
 ## Mathematics
 
-Let C_t be the close of a completed candle.
+Let $C_t$ be the completed candle close, $r_t$ the realized log return, $n$ the number of returns, and $k$ the lag.
 
-- Log price: z_t = ln(C_t).
-- One-bar realized log return: r_t = z_t - z_(t-1). This uses the prior close; it differs from the future-return training label in Chapter XVIII.
-- Sample mean: sum(r_t)/n.
-- Sample variance: sum((r_t - mean)^2)/(n-1).
-- Rolling volatility: sample standard deviation of the most recent 12 returns (one hour on the 5m series; twelve hours on the 1h series). It is not a volatility forecast.
-- ACF at lag k: sum((r_t - mean)(r_(t-k) - mean))/sum((r_t - mean)^2), using valid paired indices in the numerator. PACF measures partial linear association at a lag after controlling shorter lags. The plots show descriptive estimates without confidence bands.
-- ADF (constant, AIC lag choice): null of a unit root. Small p-value is evidence against that null. KPSS (level stationarity): null of level stationarity. Read both tests together; failure to reject is not proof. Report lookup-table p-value bounds/warnings and acknowledge low power, changing regimes and short samples.
-- ACF of squared returns: exploratory clue for time-varying volatility, not proof of ARCH/GARCH. Later test model residuals and compare out-of-sample volatility forecasts.
+### Log price and realized return
+
+```math
+\begin{aligned}z_t&=\ln(C_t)\\r_t&=z_t-z_{t-1}\\&=\ln\left(\frac{C_t}{C_{t-1}}\right)\end{aligned}
+```
+
+This uses the prior close, not a future training label.
+
+### Sample mean, variance and standard deviation
+
+```math
+\begin{aligned}\bar r&=\frac{1}{n}\sum_{t=1}^n r_t=\frac{r_1+r_2+\cdots+r_n}{n}\\s^2&=\frac{1}{n-1}\sum_{t=1}^n(r_t-\bar r)^2\\s&=\sqrt{\frac{1}{n-1}\sum_{t=1}^n(r_t-\bar r)^2}\end{aligned}
+```
+
+For the reported BTC sample:
+
+```math
+\begin{aligned}n&=2015\\\bar r&\approx-0.0000707463\\s&\approx0.0018500743\end{aligned}
+```
+
+### Rolling volatility (12 returns)
+
+```math
+\begin{aligned}\bar r_{t,12}&=\frac{1}{12}\sum_{i=0}^{11}r_{t-i}\\s_{t,12}&=\sqrt{\frac{1}{11}\sum_{i=0}^{11}(r_{t-i}-\bar r_{t,12})^2}\end{aligned}
+```
+
+This is one hour on the 5m series or twelve hours on the 1h series. It is not a volatility forecast.
+
+### Autocovariance and ACF
+
+```math
+\begin{aligned}\hat\gamma_k&=\frac{1}{n}\sum_{t=k+1}^n(r_t-\bar r)(r_{t-k}-\bar r)\\\hat\gamma_0&=\frac{1}{n}\sum_{t=1}^n(r_t-\bar r)^2\\\hat\rho_k&=\frac{\hat\gamma_k}{\hat\gamma_0}\end{aligned}
+```
+
+The denominator n matches the biased autocovariance normalization used for the exploratory ACF. PACF measures partial linear association after controlling intermediate lags. The plots show descriptive estimates without confidence bands.
+
+### ADF and KPSS
+
+ADF (constant, AIC lag choice) tests the null of a unit root. KPSS tests the null of level stationarity. Read both together; failure to reject is not proof. Report lookup-table p-value bounds/warnings and acknowledge low power, changing regimes and short samples.
+
+### Squared returns and volatility dependence
+
+```math
+q_t=r_t^2
+```
+
+Apply ACF to squared returns to explore time-varying volatility, not to prove ARCH/GARCH. Later test fitted residuals and compare out-of-sample volatility forecasts.
 
 ## Run from repository root
 
