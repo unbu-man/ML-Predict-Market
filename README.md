@@ -163,3 +163,7 @@ python3 -m unittest discover -s ./tests -t . -v
 ```
 
 `tests/__init__.py` makes the local test directory a regular Python package. The explicit start and top-level paths also avoid ambiguous resolution of another installed package called `tests`. If discovery still fails, check `pwd` and `ls tests` before changing the Python environment. The presence of a discovery fix does not establish that all tests pass on your machine.
+
+## First historical data collection
+
+[Chapter XXI](docs/21_first_historical_dataset.md) provides the seven-day BTC/USD collector and instructions. Six new fixture tests are supplied; real feed access, licensing and local execution remain pending. No model is trained.

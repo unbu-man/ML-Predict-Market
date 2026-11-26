@@ -117,3 +117,7 @@ Founder agreed to the XGBoost + TSA + optional volatility/regime + selective WAI
 ## 2026-11-26 — Data foundation implementation draft
 
 Prepared a bounded BTC-USD connectivity probe and six fixture tests, pending execution. Web retrieval did not return a valid candle payload. XAU access remains unverified. Chapter XX records the provisional dual regression/classification target and next gates. Day 1 remains in progress; no fabricated market data or model results.
+
+## 2026-11-26 — Historical dataset starter
+
+Added bounded Coinbase BTC-USD collection and export with gap report, hash and unknown historical publication time, plus six fixture tests. Actual test execution and real data access remain pending. See [Chapter XXI](21_first_historical_dataset.md).
