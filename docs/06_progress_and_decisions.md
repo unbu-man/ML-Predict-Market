@@ -113,3 +113,7 @@ Do not mark “done” before runnable proof exists. A forecast chart without a 
 ## 2026-11-26 — ML-019: Adopt hybrid selective forecast research
 
 Founder agreed to the XGBoost + TSA + optional volatility/regime + selective WAIT direction. See [Chapter XIX](19_hybrid_selective_forecast_strategy.md) for ordered M0–M6 experiments, mathematical contracts and holdout/paper promotion gates. Win rate is secondary to net expectancy, risk, coverage and forecast quality. No numerical win-rate or probability threshold is approved. No source access or trained model is established by this decision. Day 1 target review and local setup remain open.
+
+## 2026-11-26 — Data foundation implementation draft
+
+Prepared a bounded BTC-USD connectivity probe and six fixture tests, pending execution. Web retrieval did not return a valid candle payload. XAU access remains unverified. Chapter XX records the provisional dual regression/classification target and next gates. Day 1 remains in progress; no fabricated market data or model results.

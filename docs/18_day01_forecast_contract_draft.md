@@ -60,3 +60,7 @@ Run from the repository root:
     python3 -m examples.day01_targets
 
 **Status:** Day 1 **In progress**; target definition remains a *proposal* until reviewed. Day 2 will generalize the 5-minute-only illustrative Candle into a proper typed multi-timeframe production schema.
+
+## 26 November continuation
+
+Proceed provisionally with both numeric return and UP/NOT_UP labels for engineering, pending explicit review and Mac tests. See [Chapter XX](20_day02_data_foundation.md). Provider access and licensing remain unresolved; Day 1 is not marked complete.

@@ -40,3 +40,7 @@
 If gold access is unavailable, keep its adapter a **blocked integration** with clearly tagged synthetic test fixtures; do not claim historical XAU/USD model results. Never commit credentials or client data. We can validate the mathematical engine separately from provider access.
 
 **No data ingestion or asset-specific signal accuracy is claimed here.**
+
+## 26 November probe update
+
+Official Coinbase and OANDA candle definitions rechecked. Attempted Coinbase historical retrieval through assistant web access did not return a payload. Use [Chapter XX](20_day02_data_foundation.md) for the bounded local probe. No real dataset or license clearance established.
