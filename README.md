@@ -153,3 +153,13 @@ python3 -m examples.day01_targets
 ## Data foundation — 26 November 2026
 
 [Chapter XX](docs/20_day02_data_foundation.md) provides a read-only Coinbase connectivity probe and six fixture tests. Actual provider data access, licensing, Mac execution and test results remain unverified. Run the probe only after checking permitted use; no credentials or orders.
+
+## Python 3.12 test-discovery troubleshooting
+
+Run from the repository root (the directory containing `README.md`, `examples/` and `tests/`):
+
+```bash
+python3 -m unittest discover -s ./tests -t . -v
+```
+
+`tests/__init__.py` makes the local test directory a regular Python package. The explicit start and top-level paths also avoid ambiguous resolution of another installed package called `tests`. If discovery still fails, check `pwd` and `ls tests` before changing the Python environment. The presence of a discovery fix does not establish that all tests pass on your machine.
