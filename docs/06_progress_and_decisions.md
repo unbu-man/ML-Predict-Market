@@ -149,3 +149,7 @@ Added fixed AR(1) mean, train-only two-stage Gaussian QML GARCH(1,1), constant/r
 ## 2026-11-26 — ML-025 local volatility results
 
 User reported GARCH11 had lower QLIKE and variance MSE than both constant and rolling24 in validation and development replay (403 observations each); rolling24 won validation MAE. Persistence 0.94661, standardized ARCH-LM p=0.85976, training diagnostics only. Retain GARCH for later causal feature ablation, not as a proven direction predictor. Next M2 Logistic/Ridge baseline with verified feature export, chronological purge and train-only scaling; longer history and untouched holdout still required. [Results](25_garch_volatility.md#8-user-reported-btcusd-garch-results--26-november-2026).
+
+## 2026-11-26 — ML-026: supervised baseline implementation
+
+Added four fixed Logistic/Ridge models, 12 allowlisted inputs after removing redundant momentum, chronological strict availability purge, train-only scaling and no-skill probability/return benchmarks. Five synthetic tests passed in the assistant container. Real feature export, scores, matched TSA comparison, longer history and XAU coverage remain pending. See [Chapter XXVI](26_supervised_baselines.md).

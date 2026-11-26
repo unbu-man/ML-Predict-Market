@@ -186,3 +186,7 @@ Compared with Chapter XXIV's AR(1) ARCH-LM p = 7.38347e-9, standardized residual
 ### Decision and next gate
 
 Retain GARCH as a promising V1 research candidate, not a promoted production feature. The next supervised experiment is M2: Logistic Regression (UP/NOT_UP) and Ridge Regression (forward log return), separately for 5m and 1h. Verify Chapter XXIII feature/target files and hashes first, use the manifest allowlist, drop redundant momentum columns for the linear baselines, fit scalers on training only, purge any labels whose assumed availability overlaps the next block, and compare with zero-return and training-majority benchmarks. Do not add full-sample fitted GARCH to training inputs: generate causal volatility features in a later historical-fold ablation (M4), comparing otherwise identical models on matched origins. Keep the existing week as a smoke test and obtain longer authorized data with a fresh chronological holdout before making model-selection or trading-performance claims. No one-hour variance forecast, actual publication latency, independent raw-data verification, XAU access, trading win rate or live orders established.
+
+## Follow-up
+
+[Chapter XXVI — Supervised baselines](26_supervised_baselines.md) implements M2 without GARCH features. The causal GARCH feature ablation is deferred.

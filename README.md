@@ -199,3 +199,7 @@ Use GitHub-rendered LaTeX: single-dollar delimiters for inline math and fenced `
 ## First local volatility results — 26 November 2026
 
 [Chapter XXV results](docs/25_garch_volatility.md#8-user-reported-btcusd-garch-results--26-november-2026) records user-reported improvements on QLIKE and variance MSE for GARCH versus constant and rolling24 in both development blocks. GARCH remains a research candidate; next is Logistic/Ridge without GARCH, then a causal matched ablation. No final holdout or trading performance established.
+
+## Supervised ML baselines
+
+[Chapter XXVI](docs/26_supervised_baselines.md) introduces Logistic and Ridge models for 5m and 1h, checked feature/target exports, train-only scaling and strict label purge. Five synthetic tests passed in the assistant container; real-data results remain pending.
