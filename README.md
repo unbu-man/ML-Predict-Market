@@ -187,3 +187,7 @@ Use GitHub-rendered LaTeX: single-dollar delimiters for inline math and fenced `
 ## Statistical forecasting experiment
 
 [Chapter XXIV](docs/24_statistical_forecasting.md) explains zero-return, AR(1), MA(1) and ARMA(1,1) forecasts, with GitHub-rendered equations, chronological fixed-parameter development replay, diagnostic tests and commands. Five synthetic fixture tests passed in the assistant environment; the real-market run is pending.
+
+## First statistical forecasting results — 26 November 2026
+
+[Chapter XXIV results](docs/24_statistical_forecasting.md#9-user-reported-first-real-data-baseline-experiment--26-november-2026) records the user's local report. All fitted models completed; modest numerical error changes did not translate into consistent directional improvement. ARCH-LM motivates the next conditional-volatility experiment. No validated trading signal or win rate.
