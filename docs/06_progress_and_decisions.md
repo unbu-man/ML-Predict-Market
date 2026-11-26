@@ -141,3 +141,7 @@ Added zero-return, AR(1), MA(1) and ARMA(1,1) 5m/1h forecasts with a separate tr
 ## 2026-11-26 — ML-024 local result and volatility research decision
 
 User reported all three statistical candidates fit on the BTC development sample. Numerical improvements over zero return were small and metric-dependent; no consistent directional improvement over training majority. AR(1) retained as parsimonious mean candidate (AIC -531.05068, BIC -515.75803); MA(1) nearly tied by AIC. All training ARCH-LM p-values below 1e-8, motivating a GARCH vs constant/rolling variance experiment, not a directional promotion. [Full comparison](24_statistical_forecasting.md#9-user-reported-first-real-data-baseline-experiment--26-november-2026). Raw files and test-suite output not independently verified; no untouched holdout or trade performance.
+
+## 2026-11-26 — ML-025: Conditional variance implementation
+
+Added fixed AR(1) mean, train-only two-stage Gaussian QML GARCH(1,1), constant/rolling24 benchmarks and 5m causal variance replay, with six synthetic tests passed. The seven-day sample remains development only. Actual scores, Mac CLI execution, longer history, feature export and XAU access are pending. See [Chapter XXV](25_garch_volatility.md).

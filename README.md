@@ -191,3 +191,7 @@ Use GitHub-rendered LaTeX: single-dollar delimiters for inline math and fenced `
 ## First statistical forecasting results — 26 November 2026
 
 [Chapter XXIV results](docs/24_statistical_forecasting.md#9-user-reported-first-real-data-baseline-experiment--26-november-2026) records the user's local report. All fitted models completed; modest numerical error changes did not translate into consistent directional improvement. ARCH-LM motivates the next conditional-volatility experiment. No validated trading signal or win rate.
+
+## GARCH volatility forecasting
+
+[Chapter XXV](docs/25_garch_volatility.md) introduces two-stage AR(1)–GARCH(1,1), constant and rolling variance benchmarks, QLIKE and residual diagnostics. Six synthetic tests passed in an isolated container; real-data evaluation is pending. One-step volatility only, no directional promotion.

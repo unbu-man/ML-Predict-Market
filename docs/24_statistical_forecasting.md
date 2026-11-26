@@ -207,3 +207,7 @@ At nominal 5% significance, the training Ljung-Box tests at lag 12 do not reject
 
 Next experiment: compare constant training variance (V0), trailing sample variance (V0 rolling) and train-fitted GARCH(1,1) (V1) for one-step conditional variance. Keep mean specification and eligible origins consistent; initialize using training data, freeze parameters and update the variance state only after realized innovations become available. Measure QLIKE and squared-error loss on a common realized variance proxy; diagnose standardized residuals, convergence and persistence. Any 1h variance target needs an explicit aggregation and covariance assumption; do not multiply standard deviation by 12. No GARCH parameters or skill yet. GARCH is a volatility model, not an automatic direction signal. Longer authorized history and a fresh untouched chronological holdout remain required before promotion; gold access, feature export verification and original publication latency remain pending.
 
+
+## Follow-up experiment
+
+[Chapter XXV](25_garch_volatility.md) implements the proposed one-step variance comparison. Real GARCH results remain pending.
