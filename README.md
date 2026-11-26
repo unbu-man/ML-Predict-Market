@@ -167,3 +167,7 @@ python3 -m unittest discover -s ./tests -t . -v
 ## First historical data collection
 
 [Chapter XXI](docs/21_first_historical_dataset.md) provides the seven-day BTC/USD collector and instructions. Six new fixture tests are supplied; real feed access, licensing and local execution remain pending. No model is trained.
+
+## Market EDA and TSA
+
+[Chapter XXII](docs/22_market_eda_tsa.md) documents the data audit and exploratory diagnostics. Four new fixture tests passed in the assistant environment; real dataset execution remains pending. Install requirements-eda.txt and run the chapter commands from the repository root.

@@ -121,3 +121,7 @@ Prepared a bounded BTC-USD connectivity probe and six fixture tests, pending exe
 ## 2026-11-26 — Historical dataset starter
 
 Added bounded Coinbase BTC-USD collection and export with gap report, hash and unknown historical publication time, plus six fixture tests. Actual test execution and real data access remain pending. See [Chapter XXI](21_first_historical_dataset.md).
+
+## 2026-11-26 — Market EDA/TSA starter
+
+Added CSV/manifest audit, contiguous-segment log-return diagnostics, ADF/KPSS, ACF/PACF, rolling volatility and squared-return ACF, seven plots, and JSON report. Four synthetic-fixture tests passed in assistant environment. Real BTC data and gold provider access remain unverified. See [Chapter XXII](22_market_eda_tsa.md).
