@@ -195,3 +195,7 @@ Use GitHub-rendered LaTeX: single-dollar delimiters for inline math and fenced `
 ## GARCH volatility forecasting
 
 [Chapter XXV](docs/25_garch_volatility.md) introduces two-stage AR(1)–GARCH(1,1), constant and rolling variance benchmarks, QLIKE and residual diagnostics. Six synthetic tests passed in an isolated container; real-data evaluation is pending. One-step volatility only, no directional promotion.
+
+## First local volatility results — 26 November 2026
+
+[Chapter XXV results](docs/25_garch_volatility.md#8-user-reported-btcusd-garch-results--26-november-2026) records user-reported improvements on QLIKE and variance MSE for GARCH versus constant and rolling24 in both development blocks. GARCH remains a research candidate; next is Logistic/Ridge without GARCH, then a causal matched ablation. No final holdout or trading performance established.

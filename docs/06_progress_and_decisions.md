@@ -145,3 +145,7 @@ User reported all three statistical candidates fit on the BTC development sample
 ## 2026-11-26 — ML-025: Conditional variance implementation
 
 Added fixed AR(1) mean, train-only two-stage Gaussian QML GARCH(1,1), constant/rolling24 benchmarks and 5m causal variance replay, with six synthetic tests passed. The seven-day sample remains development only. Actual scores, Mac CLI execution, longer history, feature export and XAU access are pending. See [Chapter XXV](25_garch_volatility.md).
+
+## 2026-11-26 — ML-025 local volatility results
+
+User reported GARCH11 had lower QLIKE and variance MSE than both constant and rolling24 in validation and development replay (403 observations each); rolling24 won validation MAE. Persistence 0.94661, standardized ARCH-LM p=0.85976, training diagnostics only. Retain GARCH for later causal feature ablation, not as a proven direction predictor. Next M2 Logistic/Ridge baseline with verified feature export, chronological purge and train-only scaling; longer history and untouched holdout still required. [Results](25_garch_volatility.md#8-user-reported-btcusd-garch-results--26-november-2026).
