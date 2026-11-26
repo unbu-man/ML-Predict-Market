@@ -129,3 +129,7 @@ Added CSV/manifest audit, contiguous-segment log-return diagnostics, ADF/KPSS, A
 ## 2026-11-26 — First user-reported BTC EDA success
 
 User's local terminal report shows 2,016 five-minute BTC/USD candles, zero gaps, and successful EDA output. ADF/KPSS are consistent with nonstationary log price and level-stationary log returns in this sample. [Recorded interpretation](22_market_eda_tsa.md#first-observed-btcusd-smoke-test-results--26-november-2026). Evidence is pasted output, not independent CSV/manifest verification. ACF/PACF, squared-return ACF, longer history and hourly/XAU checks remain open. No forecast or trade performance measured.
+
+## 2026-11-26 — ML-023: EDA-informed feature starter
+
+Full user-pasted report shows weak return autocorrelation (lag 1 = 0.064) and stronger squared-return dependence (lag 2 = 0.175). Retain AR(1) baseline, investigate rolling volatility and later GARCH; no validated model selection. Added separate close-only feature/label generator with five tests pending execution. See [Chapter XXIII](23_causal_feature_dataset.md). Seven-day sample is development only; original publication latency and raw data not independently verified.

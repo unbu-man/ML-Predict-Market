@@ -175,3 +175,7 @@ python3 -m unittest discover -s ./tests -t . -v
 ## First local market-data evidence — 26 November 2026
 
 The user reported a successful five-minute BTC/USD EDA run: 2,016 candles, zero missing intervals. ADF/KPSS support starting with log returns rather than log price in this seven-day sample. [Results and limitations](docs/22_market_eda_tsa.md#first-observed-btcusd-smoke-test-results--26-november-2026). This is a pipeline smoke test, not a validated prediction model.
+
+## Feature and target engineering
+
+[Chapter XXIII](docs/23_causal_feature_dataset.md) records the user's full EDA findings and introduces a close-only development dataset with separate features and labels, an explicit assumed replay delay, and five fixture tests pending execution. Longer history and purged chronological evaluation are required before model claims.

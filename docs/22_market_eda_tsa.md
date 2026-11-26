@@ -63,3 +63,7 @@ Evidence: user's pasted terminal output from the local Mac EDA run for the 13–
 At alpha = 0.05, the constant-only ADF fails to reject a unit root for log price and rejects it for returns; KPSS rejects level stationarity for log price but does not reject it for returns. These are consistent with differencing log prices once as a starting model specification. Compare ARMA/AR on log returns with ARIMA(p,1,q) on log price; do not difference returns again automatically. These tests do not establish strict or conditional stationarity, future predictability, or GARCH benefit. The statsmodels future API warnings are not runtime errors; the KPSS warnings identify table bounds.
 
 **Next gate:** inspect actual return ACF/PACF, squared-return ACF, rolling volatility and histogram from report.json and plots. Then prepare past-only features and +5m/+1h targets, after documenting availability assumptions and a purged evaluation protocol. Seven days is a smoke test; collect longer authorized history and reserve a chronological final holdout before model selection. Hourly EDA, XAU access, test-suite results, and publication latency are still unverified. No trading performance established.
+
+## Full report follow-up
+
+The user supplied the complete diagnostic JSON. See [Chapter XXIII](23_causal_feature_dataset.md) for actual return/squared-return ACF findings and the feature/target design. Plot review, raw data verification, and longer historical evaluation remain open.
