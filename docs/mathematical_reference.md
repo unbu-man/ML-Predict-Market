@@ -556,3 +556,16 @@ N_{\mathrm{pos,val}}&=20(288)-1164=4596
 ```
 
 No market skill follows from successful positive-control learnability. A model may learn direction without accurately recovering latent states, or recover states without improving direction relative to an existing baseline.
+
+### Chapter XXXI results — incremental model comparison
+
+
+```math
+\begin{aligned}
+\Delta\mathrm{Accuracy}_{\mathrm{pp}}&=100(A_{\mathrm{augmented}}-A_{\mathrm{base}})\\
+\mathrm{RMSE\ reduction}_{\%}&=100\left(1-\frac{\mathrm{RMSE}_{\mathrm{augmented}}}{\mathrm{RMSE}_{\mathrm{base}}}\right)\\
+\Delta\mathrm{ARI}&=\mathrm{ARI}_{\mathrm{GMM}}-\mathrm{ARI}_{\mathrm{KMeans}}
+\end{aligned}
+```
+
+Accuracy inputs are fractions; the result is in percentage points. RMSE reduction is relative to a positive matched baseline error. ARI difference is on the chance-adjusted partition agreement scale. See [Chapter XXXI results](31_market_regimes.md#8-user-reported-local-results--27-november-2026).

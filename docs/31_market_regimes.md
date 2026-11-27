@@ -161,3 +161,89 @@ Existing output directory is protected. Read the report or choose a fresh direct
 Assess direction learnability on the known-regime control versus independent-return control and matched XGBoost baseline. Then consider a GARCH x regime factorial ablation and a separate purged walk-forward research protocol. Do not select a production feature group based on this simulation. HMM, TAR, adaptive routing, calibration and selective risk rules are later experiments, not implemented here. Authorized real-data coverage, XAU/USD source, measured latency, costs and prospective paper trading remain unresolved.
 
 [Chapter XXX](30_hybrid_garch_xgboost.md) | [Chapter XXIX](29_multitimeframe.md) | [Mathematical reference](mathematical_reference.md)
+
+
+## 8. User-reported local results — 27 November 2026
+
+The user supplied the full local report. Counts match the expected common origins: negative control 68,820 train / 16,404 validation; positive control 10,356 / 4,596. The source block hashes and fixed settings match the earlier experiments. No holdout exported. This establishes a user-reported successful CLI run, not independent verification of raw prediction rows or Mac unit-test output.
+
+### Classification metrics
+
+| Control | Horizon | Variant | Accuracy | Brier | Log loss | ROC-AUC |
+|---|---|---|---:|---:|---:|---:|
+| Negative | 5m | Prevalence | .495001 | .250003 | .693153 | .500000 |
+| Negative | 5m | MTF | .498537 | .250126 | .693401 | .500125 |
+| Negative | 5m | K-Means | .503109 | .250124 | .693397 | .501116 |
+| Negative | 5m | GMM | .494392 | .250136 | .693420 | .498051 |
+| Negative | 1h | Prevalence | .484760 | .250060 | .693266 | .500000 |
+| Negative | 1h | MTF | .513655 | .249618 | .692383 | .527637 |
+| Negative | 1h | K-Means | .513655 | .249618 | .692383 | .527637 |
+| Negative | 1h | GMM | .516277 | .249629 | .692407 | .526341 |
+| Positive | 5m | Prevalence | .439948 | .252754 | .698658 | .500000 |
+| Positive | 5m | MTF | .624891 | .220523 | .631542 | .674442 |
+| Positive | 5m | K-Means | .624238 | .220524 | .631500 | .676106 |
+| Positive | 5m | GMM | .628372 | .220221 | .630811 | .675938 |
+| Positive | 1h | Prevalence | .373586 | .260813 | .714816 | .500000 |
+| Positive | 1h | MTF | .722150 | .152015 | .452221 | .820644 |
+| Positive | 1h | K-Means | .715187 | .151248 | .449931 | .823794 |
+| Positive | 1h | GMM | .723890 | .150244 | .445302 | .825397 |
+
+All three learned variants recognize some deliberately injected directional structure. GMM adds only 0.3481 and 0.1741 percentage points in accuracy over MTF at 5m and 1h, respectively. K-Means has the best positive-control 5m AUC, GMM the best positive-control 1h AUC and probability losses at both horizons. Training prevalence is a weak fixed-direction baseline under the observed shift in class balance. Retrospectively, the validation majority-class fractions on the positive control are .560052 and .626414, respectively; these are descriptive oracle fractions, not deployable baseline forecasts. The independent-return negative control is still near chance, with modest finite-sample deviations. Do not promote a variant based on this single simulation.
+
+### Regression metrics
+
+| Control | Horizon | Variant | MAE | RMSE | Sign accuracy |
+|---|---|---|---:|---:|---:|
+| Negative | 5m | Zero return | .000899706 | .001129797 | .504999 |
+| Negative | 5m | Training mean | .000899708 | .001129800 | .495001 |
+| Negative | 5m | MTF | .000900021 | .001129944 | .499329 |
+| Negative | 5m | K-Means | .000900021 | .001129944 | .499329 |
+| Negative | 5m | GMM | .000900113 | .001129991 | .495977 |
+| Negative | 1h | Zero return | .003151525 | .003947176 | .515240 |
+| Negative | 1h | Training mean | .003151590 | .003947291 | .484760 |
+| Negative | 1h | MTF | .003149267 | .003947232 | .513655 |
+| Negative | 1h | K-Means | .003149267 | .003947232 | .513655 |
+| Negative | 1h | GMM | .003149687 | .003947612 | .516398 |
+| Positive | 5m | Zero return | .001489944 | .001967679 | .439948 |
+| Positive | 5m | Training mean | .001496239 | .001972658 | .439948 |
+| Positive | 5m | MTF | .001407157 | .001913682 | .626414 |
+| Positive | 5m | K-Means | .001406653 | .001913718 | .628372 |
+| Positive | 5m | GMM | .001406611 | .001913199 | .624674 |
+| Positive | 1h | Zero return | .007575368 | .008678124 | .373586 |
+| Positive | 1h | Training mean | .007735168 | .008844117 | .373586 |
+| Positive | 1h | MTF | .005090199 | .006764983 | .721715 |
+| Positive | 1h | K-Means | .005079111 | .006749584 | .728460 |
+| Positive | 1h | GMM | .005060560 | .006734089 | .734552 |
+
+Unscaled log-return units. Positive GMM achieves the lowest MAE/RMSE at both horizons. At 1h it lowers RMSE by about 22.40% relative to zero return, but only 0.46% relative to MTF. Negative K-Means regression scores exactly match MTF at both horizons; equal aggregate metrics alone cannot establish that the fitted trees or individual predictions are identical. Negative 1h GMM has higher accuracy but worse probability losses than MTF. Different metrics measure different objectives.
+
+### State recovery and fitted cluster interpretation
+
+Validation ARI is .799345 for K-Means and .837534 for GMM on the directional simulator. ARI is a chance-adjusted agreement metric, not a percentage of correctly classified observations. No latent state recovery score is defined for the independent-return control.
+
+Positive-control centers in original log-return units (column order: mean_return_24, std_return_24, 1h_mean3, 1h_std3):
+
+| Algorithm | ID | Mean 5m return | 5m std | Mean 1h return | 1h std | Descriptive interpretation |
+|---|---:|---:|---:|---:|---:|---|
+| K-Means | 0 | .00004543 | .00241245 | .00061433 | .00818340 | Higher-volatility, near-neutral |
+| K-Means | 1 | -.00068625 | .00104835 | -.00813394 | .00336687 | Negative trend |
+| K-Means | 2 | .00067755 | .00100397 | .00797751 | .00326456 | Positive trend |
+| GMM | 0 | -.00070998 | .00098657 | -.00847742 | .00313585 | Negative trend |
+| GMM | 1 | .00070130 | .00096384 | .00842446 | .00305095 | Positive trend |
+| GMM | 2 | .00000930 | .00220938 | .00009368 | .00754180 | Higher-volatility, near-neutral |
+
+These are feature centroids, not maximum-likelihood estimates of the underlying Markov generator's emission parameters. Numeric cluster IDs differ between algorithms. K-Means training counts [2905,4154,3297] and validation counts [2286,677,1633] imply a shift in occupancy. GMM mean responsibilities shift from [.354765,.287732,.357503] in training to [.121423,.325972,.552605] in validation. Soft mean responsibilities are not hard class counts. K-Means also partitions the independent-return sample, showing why cluster existence does not establish genuine economic regimes.
+
+### Mathematical interpretation and next gate
+
+```math
+\begin{aligned}
+\Delta\mathrm{Accuracy}_{\mathrm{pp}}&=100(A_{\mathrm{augmented}}-A_{\mathrm{base}})\\
+\mathrm{RMSE\ reduction}_{\%}&=100\left(1-\frac{\mathrm{RMSE}_{\mathrm{augmented}}}{\mathrm{RMSE}_{\mathrm{base}}}\right)\\
+\Delta\mathrm{ARI}&=\mathrm{ARI}_{\mathrm{GMM}}-\mathrm{ARI}_{\mathrm{KMeans}}
+\end{aligned}
+```
+
+With positive-control 1h accuracy .7238903394 versus .7221496954, the incremental GMM gain is .1740644 percentage points; RMSE .0067340891 versus .0067649828 gives .4567% relative reduction. ARI gain is .0381883, not 3.82 percentage points of classification accuracy.
+
+Next Chapter XXXII: implement matched factorial ablation across variance features (none, rolling, causal GARCH) and regime encodings (none, K-Means, GMM), while fixing the MTF base and model settings. Consider all three controls (independent returns, zero-mean GARCH, persistent directional states) and an explicitly designed joint mean/variance control; any nonzero-mean GARCH feature needs an appropriate causal residual definition or clear labeling as a misspecified zero-mean proxy. Separate variance prediction from direction/return tasks. Compare paired losses within each control and add purged walk-forward evaluation across independently seeded simulations before adaptive selection. Preserve no-holdout and no-real-data gates; no trading performance, model promotion, or real-data rights established.

@@ -197,3 +197,7 @@ User-reported complete synthetic experiment: counts 68,531/16,115 and 7,187/4,30
 ## 2026-11-27 — ML-031: Regime discovery and directional control
 
 Added training-only scaling and K-Means/GMM on four causal MTF features, 21/24/24-feature matched XGBoost ablation, independent-return negative and persistent Markov-regime directional positive control, scoring-only ARI. Five new isolated unit tests passed; complete CLI and Mac results pending. GARCH excluded for isolated regime effect; joint ablation deferred. No real data, holdout or model promotion. [Chapter XXXI](31_market_regimes.md).
+
+## 2026-11-27 — ML-031 local regime results
+
+User-reported CLI completed with matched counts 68,820/16,404 and 10,356/4,596. Known-direction control GMM 5m/1h accuracy 62.84%/72.39%, AUC .675938/.825397; ARI .837534 vs K-Means .799345. Incremental 1h GMM gain over MTF only .1741 percentage points; negative control remains near chance. No market-skill inference. Next matched factorial variance/regime ablation and purged walk-forward controls. [Results](31_market_regimes.md#8-user-reported-local-results--27-november-2026).

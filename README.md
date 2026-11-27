@@ -245,3 +245,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## Unsupervised regime features
 
 [Chapter XXXI](docs/31_market_regimes.md) adds training-only K-Means and diagonal GMM, hard/soft encodings, matched XGBoost ablations and a known-direction Markov-regime positive control. Five isolated tests passed; full local CLI pending. Synthetic only; licensing gate remains active.
+
+## Local synthetic regime results
+
+[Chapter XXXI results](docs/31_market_regimes.md#8-user-reported-local-results--27-november-2026): known-direction control learned by MTF/XGBoost, GMM state ARI .8375, 1h classification accuracy 72.39% with only .1741 percentage-point incremental gain over MTF. Synthetic software evidence only. Next combined variance/regime ablations; real-data rights unresolved.
