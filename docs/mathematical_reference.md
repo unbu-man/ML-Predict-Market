@@ -398,3 +398,17 @@ v_\infty&=10^{-7}/(1-0.12-0.85)
 ```
 
 The last three lines define a synthetic positive control with predictable variance, not predictable sign. The oracle variance is scoring-only. The independent synthetic control remains the negative control. For complete aligned blocks with successful refits, common eligible count is N minus 1440 warmup indices and 13 final reserved origins. See Chapter XXX for limitations and the matched comparison.
+
+### Chapter XXX result interpretation — variance versus direction
+
+
+```math
+\begin{aligned}
+E[r_{t+1}\mid\mathcal F_t]&=0\\
+P(r_{t+1}>0\mid\mathcal F_t)&=\tfrac12\\
+E[r_{t+1}^2\mid\mathcal F_t]&=v_{t+1}\\
+\mathrm{MSE\ reduction}&=100\left(1-\frac{\mathrm{MSE}_{\mathrm{model}}}{\mathrm{MSE}_{\mathrm{benchmark}}}\right)\%
+\end{aligned}
+```
+
+The first three equalities apply to the symmetric zero-mean GARCH simulator with positive conditional variance, not generally to markets. The MSE reduction formula requires a positive benchmark MSE and matched units/origins. See [Chapter XXX results](30_hybrid_garch_xgboost.md#8-user-reported-hybrid-results--27-november-2026) for numeric examples.

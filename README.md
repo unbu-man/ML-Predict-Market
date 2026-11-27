@@ -237,3 +237,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## Causal hybrid GARCH + XGBoost
 
 [Chapter XXX](docs/30_hybrid_garch_xgboost.md) implements historical-window zero-mean GARCH refits, rolling-RMS and constant benchmarks, matched base/MTF ablations, and independent-innovation and known-GARCH synthetic controls. Five tests supplied, execution pending; no market-skill claims. Data permissions remain unresolved.
+
+## Local synthetic hybrid results
+
+[Chapter XXX results](docs/30_hybrid_garch_xgboost.md#8-user-reported-hybrid-results--27-november-2026): 35 successful reported refits, GARCH improves variance MSE 17.57% vs refit constant on known-GARCH control but not on independent returns. No directional promotion or real market performance inferred. Next training-only regime discovery and direction positive control; licensing gate remains active.

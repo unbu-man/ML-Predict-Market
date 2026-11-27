@@ -146,3 +146,76 @@ Existing requirements-xgboost.txt includes SciPy, statsmodels and XGBoost via it
 Inspect counts, failed-fit logs, variance QLIKE/MSE on both controls, and matched directional/return metrics separately. A variance positive control tests variance learnability, not directional learnability. Do not tune or promote a model based on a single synthetic validation. A separate direction positive control can follow. Next candidate is training-only market-regime discovery (K-Means/GMM), with causal features and matched evaluation. Actual market-data licensing, untouched real holdout, measured feed latency, cost-aware prospective paper evaluation and XAU coverage remain open. No live orders.
 
 [Chapter XXV](25_garch_volatility.md) | [Chapter XXIX](29_multitimeframe.md) | [Mathematical reference](mathematical_reference.md)
+
+
+## 8. User-reported hybrid results — 27 November 2026
+
+Local report supplied by the user. Expected counts and source block hashes match; negative control 68,531/16,115 train/validation pairs, positive control 7,187/4,307. Reported refits: 30 negative, five positive, zero failures. No holdout exported. This is evidence of a successful local CLI run, not independent inspection of raw data, unit-test output or individual predictions.
+
+### Variance evaluation
+
+| Control | Forecast | QLIKE | Variance MAE | Variance MSE |
+|---|---|---:|---:|---:|
+| Negative | Rolling RMS | -12.568774 | 1.242981e-6 | 3.347986e-12 |
+| Negative | GARCH | -12.571331 | 1.236344e-6 | 3.339970e-12 |
+| Negative | Refit constant | -12.571573 | 1.235977e-6 | 3.339066e-12 |
+| Positive | Rolling RMS | -11.664938 | 3.400446e-6 | 3.335467e-11 |
+| Positive | GARCH | -11.826310 | 3.058234e-6 | 2.795035e-11 |
+| Positive | Refit constant | -11.602008 | 3.195871e-6 | 3.390648e-11 |
+| Positive | Simulator oracle | -11.828890 | 3.089903e-6 | 2.791022e-11 |
+
+Positive control: estimated GARCH reduces variance MSE by 17.5664% against refit constant and 16.2026% against rolling RMS. Its QLIKE is 0.224301 and 0.161372 lower, respectively. GARCH MSE is close to the oracle; GARCH happens to have lower variance MAE than the oracle on this finite sample. Squared-return proxy loss is noisy, and conditional variance is the squared-loss optimal forecast, not generally the absolute-loss optimal forecast. Negative control: constant wins all three variance losses; fitted GARCH alpha equals zero in 10 of 30 refits. Do not interpret nonzero fitted beta in these windows as evidence of true clustering.
+
+### Parameter recovery (positive control)
+
+| Parameter | Generating value | Arithmetic mean across five local refits |
+|---|---:|---:|
+| omega | 1e-7 | 9.241587e-8 |
+| alpha | 0.12 | 0.116684 |
+| beta | 0.85 | 0.852720 |
+| alpha + beta | 0.97 | 0.969403 |
+
+This descriptive mean is not an estimator with reported confidence bounds. Individual fits differ across windows. Successful optimizer status does not prove global optimality.
+
+### Matched XGBoost direction/return evaluation
+
+Accuracy and RMSE below summarize all variants; return units are unscaled log returns.
+
+| Variant | Negative 5m accuracy | Negative 1h accuracy | Positive 5m accuracy | Positive 1h accuracy |
+|---|---:|---:|---:|---:|
+| Prevalence | 0.495625 | 0.484890 | 0.511261 | 0.498723 |
+| 5m_only | 0.498852 | 0.491468 | 0.496866 | 0.501741 |
+| 5m_rolling | 0.497983 | 0.490413 | 0.499420 | 0.506153 |
+| 5m_garch | 0.497549 | 0.491095 | 0.498723 | 0.503599 |
+| mtf_only | 0.506857 | 0.516910 | 0.497330 | 0.488507 |
+| mtf_rolling | 0.502203 | 0.514179 | 0.498259 | 0.494312 |
+| mtf_garch | 0.505430 | 0.514614 | 0.493151 | 0.494079 |
+
+| Variant | Negative 5m RMSE | Negative 1h RMSE | Positive 5m RMSE | Positive 1h RMSE |
+|---|---:|---:|---:|---:|
+| Zero return | 0.001129074 | 0.003938280 | 0.001784405 | 0.005796846 |
+| Training mean | 0.001129077 | 0.003938415 | 0.001784304 | 0.005793091 |
+| 5m_only | 0.001129137 | 0.003944559 | 0.001792914 | 0.005787959 |
+| 5m_rolling | 0.001129139 | 0.003948868 | 0.001791898 | 0.005818172 |
+| 5m_garch | 0.001129220 | 0.003947371 | 0.001793712 | 0.005793181 |
+| mtf_only | 0.001129154 | 0.003938832 | 0.001790994 | 0.005829231 |
+| mtf_rolling | 0.001129108 | 0.003940072 | 0.001790912 | 0.005862798 |
+| mtf_garch | 0.001129168 | 0.003939409 | 0.001791741 | 0.005827138 |
+
+Positive control prevalence has best Brier and log loss at both horizons. Negative-control MTF-only achieves best 1h classification accuracy (0.516910), AUC (0.529810), Brier (0.249534) and log loss (0.692217); adding GARCH worsens each of these. Positive-control 5m-only has lowest 1h MAE/RMSE; neither GARCH addition beats it. Small differences do not establish reliable conditional direction or mean skill. Hourly outcomes overlap. No model promotion.
+
+### Decision and mathematical interpretation
+
+Under the known symmetric zero-mean simulator, the next return satisfies:
+
+```math
+\begin{aligned}
+r_{t+1}&=\sqrt{v_{t+1}}z_{t+1},\quad z_{t+1}\sim N(0,1)\ \text{independent of }\mathcal F_t\\
+E[r_{t+1}\mid\mathcal F_t]&=0\\
+P(r_{t+1}>0\mid\mathcal F_t)&=\tfrac12\\
+E[r_{t+1}^2\mid\mathcal F_t]&=v_{t+1}\\
+\mathrm{MSE\ reduction}&=100\left(1-\frac{\mathrm{MSE}_{\mathrm{GARCH}}}{\mathrm{MSE}_{\mathrm{benchmark}}}\right)\%
+\end{aligned}
+```
+
+Conditional variance can be predicted without conditional direction being predictable. Symmetry of future innovations also implies a symmetric aggregate return distribution in this zero-mean GARCH simulator. This is a simulator property, not an assertion about BTC/USD. Retain GARCH as a variance-research candidate and future risk/uncertainty input, not as an established directional feature. Next Chapter XXXI: training-only K-Means/GMM regime features, with train-only scaling and held-fixed fitted transforms on validation, matched feature ablations, and a separately generated known-regime/direction positive control before claiming learnability of directional structure. Do not assign economic meanings to arbitrary cluster IDs. Real-data authorization, XAU coverage, measured latency, cost-aware evaluation and untouched real holdout remain unresolved.

@@ -189,3 +189,7 @@ User requested that every formula taught be preserved in GitHub. Added [mathemat
 ## 2026-11-27 — ML-030: Causal hybrid feature implementation
 
 Added zero-mean GARCH using 1,440 observed returns per fit, refit every 2,880, 288-return rolling RMS control, recursive state updates and gap resets. Matched six XGBoost feature groups per horizon/task, known-GARCH positive and independent-innovation negative controls. Five tests supplied, not executed; direct container clone failed due to DNS. Local reports pending. No real-data use or holdout. [Chapter XXX](30_hybrid_garch_xgboost.md).
+
+## 2026-11-27 — ML-030 local hybrid results
+
+User-reported complete synthetic experiment: counts 68,531/16,115 and 7,187/4,307, 35 refits with no failures. Positive-control GARCH reduces variance MSE by 17.57% vs refit constant, 16.20% vs rolling RMS; negative-control constant wins. Direction/return ablations do not demonstrate a reliable GARCH benefit. Retain volatility candidate, no market promotion. Local tests/raw files not independently inspected. Next K-Means/GMM and known-regime/direction positive control. [Results](30_hybrid_garch_xgboost.md#8-user-reported-hybrid-results--27-november-2026).
