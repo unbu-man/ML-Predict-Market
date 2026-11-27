@@ -247,3 +247,7 @@ These are feature centroids, not maximum-likelihood estimates of the underlying 
 With positive-control 1h accuracy .7238903394 versus .7221496954, the incremental GMM gain is .1740644 percentage points; RMSE .0067340891 versus .0067649828 gives .4567% relative reduction. ARI gain is .0381883, not 3.82 percentage points of classification accuracy.
 
 Next Chapter XXXII: implement matched factorial ablation across variance features (none, rolling, causal GARCH) and regime encodings (none, K-Means, GMM), while fixing the MTF base and model settings. Consider all three controls (independent returns, zero-mean GARCH, persistent directional states) and an explicitly designed joint mean/variance control; any nonzero-mean GARCH feature needs an appropriate causal residual definition or clear labeling as a misspecified zero-mean proxy. Separate variance prediction from direction/return tasks. Compare paired losses within each control and add purged walk-forward evaluation across independently seeded simulations before adaptive selection. Preserve no-holdout and no-real-data gates; no trading performance, model promotion, or real-data rights established.
+
+## Follow-up
+
+[Chapter XXXII](32_combined_hybrid.md) implements the nine matched factorial variants and joint control. Full local experiment pending.

@@ -201,3 +201,7 @@ Added training-only scaling and K-Means/GMM on four causal MTF features, 21/24/2
 ## 2026-11-27 — ML-031 local regime results
 
 User-reported CLI completed with matched counts 68,820/16,404 and 10,356/4,596. Known-direction control GMM 5m/1h accuracy 62.84%/72.39%, AUC .675938/.825397; ARI .837534 vs K-Means .799345. Incremental 1h GMM gain over MTF only .1741 percentage points; negative control remains near chance. No market-skill inference. Next matched factorial variance/regime ablation and purged walk-forward controls. [Results](31_market_regimes.md#8-user-reported-local-results--27-november-2026).
+
+## 2026-11-27 — ML-032: Combined hybrid factorial experiment
+
+Added nine matched MTF/volatility/regime variants, four synthetic controls, Brier/MSE interaction contrasts, and scoring-only state recovery. Zero-mean GARCH is a raw second-moment proxy for nonzero-mean controls. Five isolated tests rerun successfully, with fixture encodings in the small model test. Full CLI pending. No real data or holdout. Next purged walk-forward. [Chapter XXXII](32_combined_hybrid.md).
