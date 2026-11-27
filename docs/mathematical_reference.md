@@ -669,3 +669,16 @@ N_{\mathrm{fits}}&=3\cdot3\cdot2\cdot2\cdot4=144
 ```
 
 Pairs denote training and validation counts. Actual counts can be smaller if fits fail. Compare probability losses, accuracy, AUC, MAE, RMSE, sign accuracy and factorial contrasts within each control. Training prevalence, zero-return and training-mean forecasts remain benchmarks. State recovery ARI is meaningful only for controls with state labels. Do not choose a production variant based on four particular synthetic paths.
+
+### Chapter XXXII result interpretation — interaction versus improvement
+
+
+```math
+\begin{aligned}
+\Delta_{V,G}&=L_{V,G}-L_{0,0}\\
+I_{V,G}&=L_{V,G}-L_{V,0}-L_{0,G}+L_{0,0}\\
+I_{V,G}<0&\;\not\Rightarrow\;\Delta_{V,G}<0
+\end{aligned}
+```
+
+A favorable interaction does not necessarily imply a favorable total change from the base model. Use both contrasts and matched loss comparisons. See [Chapter XXXII results](32_combined_hybrid.md#8-user-reported-factorial-results--27-november-2026). The full nine-configuration model is not uniformly superior in the synthetic controls.

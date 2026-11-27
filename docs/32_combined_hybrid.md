@@ -116,3 +116,88 @@ Five isolated tests rerun successfully in the assistant container: exact feature
 After reviewing the local report, implement purged walk-forward evaluation across multiple independently seeded paths, with each fold's transforms and training fitted only from its historical block. Predefine selection criteria and keep separate evaluation periods; no reuse of inspected synthetic validation as final evidence. Adaptive routing, calibration, risk/transaction-cost modeling, real-data rights, measured availability, XAU coverage and prospective paper evaluation remain pending. No live orders.
 
 [Chapter XXXI](31_market_regimes.md) | [Chapter XXX](30_hybrid_garch_xgboost.md) | [Mathematical reference](mathematical_reference.md)
+
+
+## 8. User-reported factorial results — 27 November 2026
+
+The supplied local report (synthetic factorial controls only) matches the fixed settings, nine configurations, source block checksums and expected eligible counts. All 144 scheduled XGBoost fits have corresponding reported metrics. Refits: negative 30, variance 5, direction 6, joint 6; total 47, zero failures. No holdout exported. This is report evidence, not independent verification of individual prediction rows, raw candles or Mac unit-test output.
+
+| Control | Train | Validation | Refits |
+|---|---:|---:|---:|
+| Negative | 68531 | 16115 | 30 |
+| Variance | 7187 | 4307 | 5 |
+| Direction | 10067 | 4307 | 6 |
+| Joint | 10067 | 4307 | 6 |
+
+### Best observed scores, including benchmarks
+
+| Control / horizon | Highest accuracy (fraction) | Lowest Brier | Lowest RMSE |
+|---|---|---|---|
+| Negative 5m | none_kmeans .507229 | prevalence .250003 | zero_return .001129074 |
+| Negative 1h | none_gmm .521812 | none_gmm .249534 | none_gmm .003938199 |
+| Variance 5m | prevalence .511261 | prevalence .249878 | training_mean .001784304 |
+| Variance 1h | prevalence .498723 | prevalence .250833 | training_mean .005793091 |
+| Direction 5m | none_none / rolling_none .621314 (tie) | none_gmm .221318 | garch_gmm .001949277 |
+| Direction 1h | garch_gmm .716276 | none_gmm .154568 | garch_gmm .006851163 |
+| Joint 5m | rolling_gmm .588112 | none_none / none_kmeans .237613 (tie) | none_none / none_kmeans .001726535 (tie) |
+| Joint 1h | rolling_none .680288 | rolling_none .192140 | none_none .007076154 |
+
+These retrospective minima are descriptive, not a validated selection rule. All regression RMSEs are unscaled log-return units. Variance-only prevalence and training mean win on both horizons for Brier and RMSE respectively. The directional control has best 1h AUC .806180 (garch_gmm); none_gmm has the best Brier/log loss. In the joint control, rolling_gmm has best 1h AUC .777633, but rolling_none has best accuracy/Brier/log loss. Different metrics need not select the same model. Negative-control deviations from chance are compatible with finite-sample variability; many variants and overlapping labels make naive independent-observation inference inappropriate.
+
+### Full nine-variant results on the joint control
+
+| Variant | 5m accuracy | 5m Brier | 5m RMSE | 1h accuracy | 1h Brier | 1h RMSE |
+|---|---:|---:|---:|---:|---:|---:|
+| none_none | .581844 | .237613 | .001726535 | .677502 | .192440 | .007076154 |
+| none_kmeans | .581844 | .237613 | .001726535 | .677966 | .192761 | .007080412 |
+| none_gmm | .582540 | .237724 | .001727233 | .679127 | .193351 | .007103856 |
+| rolling_none | .585558 | .237696 | .001727333 | .680288 | .192140 | .007081345 |
+| rolling_kmeans | .585558 | .237696 | .001727333 | .677502 | .192262 | .007085604 |
+| rolling_gmm | .588112 | .237690 | .001727144 | .676109 | .192243 | .007113906 |
+| garch_none | .579754 | .237640 | .001727198 | .677502 | .192440 | .007080150 |
+| garch_kmeans | .579754 | .237640 | .001727198 | .677966 | .192761 | .007077675 |
+| garch_gmm | .581379 | .237654 | .001727237 | .679127 | .193351 | .007101987 |
+| Prevalence | .506617 | .250120 | — | .495240 | .252380 | — |
+| Zero return | — | — | .001781245 | — | — | .008781343 |
+| Training mean | — | — | .001784105 | — | — | .008865635 |
+
+Joint 1h classifier metrics exactly match between each no-volatility variant and its GARCH-augmented counterpart in the report. Identical aggregate scores do not prove identical trees or individual predictions; inspect prediction rows before drawing stronger conclusions. No model promotion.
+
+### Second-moment performance
+
+| Control | Rolling QLIKE | GARCH QLIKE | Constant QLIKE | Rolling MSE | GARCH MSE | Constant MSE |
+|---|---:|---:|---:|---:|---:|---:|
+| Negative | -12.568774 | -12.571331 | -12.571573 | 3.347986e-12 | 3.339970e-12 | 3.339066e-12 |
+| Variance | -11.664938 | -11.826310 | -11.602008 | 3.335467e-11 | 2.795035e-11 | 3.390648e-11 |
+| Direction | -11.439396 | -11.563645 | -11.306662 | 4.719729e-11 | 4.500426e-11 | 4.957803e-11 |
+| Joint | -11.649586 | -11.783411 | -11.654290 | 2.992671e-11 | 2.675538e-11 | 2.992718e-11 |
+
+Variance-control oracle QLIKE -11.828890 and MSE 2.791022e-11. Constant wins on negative control. GARCH has lower second-moment losses than both practical benchmarks on all three structured controls, with joint MSE reduction about 10.60% vs constant. Nonzero-mean controls use raw squared returns, so these are second-moment results, not proof of correctly specified residual conditional variance. Reused negative and variance controls are not independent new experiments.
+
+### Regime recovery
+
+| Control | K-Means ARI | GMM ARI |
+|---|---:|---:|
+| Direction | .787153 | .826472 |
+| Joint | .170666 | .167556 |
+
+The joint generator uses the same innovation variance process across the three hidden mean regimes. Trend and volatility summaries can overlap strongly, and clusters can separate volatility levels rather than recover latent mean states. This is a plausible explanation for weak ARI, not a uniquely established cause. Do not equate cluster probabilities with direction probabilities.
+
+### Interaction interpretation
+
+| Control / horizon | GARCH+GMM Brier interaction | GARCH+GMM MSE interaction |
+|---|---:|---:|
+| Negative 5m | -1.497973e-6 | -1.284534e-11 |
+| Negative 1h | -1.646166e-5 | 1.567694e-9 |
+| Variance 5m | 5.469043e-5 | 1.755650e-9 |
+| Variance 1h | .000216226 | -6.356093e-8 |
+| Direction 5m | -3.244148e-5 | -1.499284e-9 |
+| Direction 1h | -.000331788 | 8.271719e-8 |
+| Joint 5m | -9.742773e-5 | -2.278908e-9 |
+| Joint 1h | 0 | -8.312672e-8 |
+
+A negative interaction can occur even when the combined model is worse than the baseline. Joint 1h Brier interaction is exactly zero for GARCH+GMM; Brier delta versus MTF is +.000911159. For joint rolling+GMM, Brier interaction -.000808265 but delta -.000196832, which is a smaller reduction than rolling alone (-.000299727). Interaction is not a model promotion criterion.
+
+### Research decision
+
+Retain MTF as the main candidate baseline; preserve all nine fixed candidates rather than choose a winner from these inspected simulations. Keep GARCH as a volatility/second-moment research candidate; no demonstrated universal directional benefit. Chapter XXXIII should implement purged chronological walk-forward on fresh independently seeded synthetic paths, with train-only scaling/clustering and supervised fits, label availability strictly before each training cutoff, disjoint evaluation origins, and causal GARCH updates. Report fold-level probability/return losses, matched baselines, variability, coverage and failure counts. Separate candidate selection from later evaluation; do not tune on evaluation blocks. Explicitly distinguish dependent folds and overlapping outcomes from independent simulation paths. No real-data permission, XAU coverage, measured availability, execution costs, final market holdout or prospective paper trading established.

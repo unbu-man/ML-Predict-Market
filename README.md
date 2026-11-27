@@ -253,3 +253,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## Combined hybrid factorial study
 
 [Chapter XXXII](docs/32_combined_hybrid.md) implements nine matched volatility/regime configurations across four synthetic controls, including joint directional and GARCH structure. Five isolated tests rerun successfully; full integration and local CLI pending. No market-performance claims.
+
+## Local synthetic factorial results
+
+[Chapter XXXII results](docs/32_combined_hybrid.md#8-user-reported-factorial-results--27-november-2026) records four controls, nine configurations, 144 fitted tasks and 47 reported successful refits. The full hybrid is not consistently best; joint 1h rolling-only wins probability losses and MTF alone wins RMSE. No market skill or model promotion. Next purged walk-forward on fresh simulation paths; licensing gate remains active.

@@ -205,3 +205,7 @@ User-reported CLI completed with matched counts 68,820/16,404 and 10,356/4,596. 
 ## 2026-11-27 — ML-032: Combined hybrid factorial experiment
 
 Added nine matched MTF/volatility/regime variants, four synthetic controls, Brier/MSE interaction contrasts, and scoring-only state recovery. Zero-mean GARCH is a raw second-moment proxy for nonzero-mean controls. Five isolated tests rerun successfully, with fixture encodings in the small model test. Full CLI pending. No real data or holdout. Next purged walk-forward. [Chapter XXXII](32_combined_hybrid.md).
+
+## 2026-11-27 — ML-032 local factorial results
+
+User-supplied report matches all expected counts, 144 fitted model/task combinations and 47 successful GARCH refits. Directional 1h best accuracy 71.63% (GARCH+GMM); joint 1h best accuracy/Brier rolling-only, lowest RMSE MTF-only. Joint GMM ARI .1676, direction .8265. GARCH improves second-moment losses on structured controls but no universal direction benefit. No promotion. Next fresh-seed purged walk-forward, with separate selection/evaluation periods. [Results](32_combined_hybrid.md#8-user-reported-factorial-results--27-november-2026).
