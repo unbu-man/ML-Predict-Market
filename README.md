@@ -261,3 +261,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## Purged walk-forward and locked selection
 
 [Chapter XXXIII](docs/33_purged_walkforward.md) implements 12 fresh synthetic paths, 36 expanding folds, matched nine-way comparison and selection locked before separate assessment. Four isolated tests passed; full upstream integration and 1296-fit local run pending. Synthetic only; rights gate remains active.
+
+## Adaptive model selection
+
+[Chapter XXXIV](docs/34_adaptive_selection.md) implements delayed-feedback rolling loss routing with simple benchmarks, locked Chapter XXXIII comparator and four fresh synthetic paths. Five isolated tests passed; full 432-fit integration and prior local report pending. Synthetic only; data rights gate remains active.

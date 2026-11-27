@@ -106,3 +106,7 @@ Four isolated tests actually ran and passed in the assistant container (determin
 Review the locked choices against simple benchmarks on each fresh assessment process and check failure/coverage audit. Do not rerank using the assessment table. Next investigate causal adaptive selection versus fixed locked candidates and a separate calibration protocol with fresh paths, followed by selective WAIT logic and cost-aware paper-only evaluation. Real market permissions, XAU data, measured publication/computation latency and untouched real-market evaluation are still unresolved. No live orders, no evidence of market profitability.
 
 [Chapter XXXII](32_combined_hybrid.md) | [Mathematical reference](mathematical_reference.md)
+
+## Follow-up
+
+[Chapter XXXIV](34_adaptive_selection.md) adds an adaptive selector evaluated on fresh synthetic paths using the locked choices from this chapter's selection folds. The full local Chapter XXXIII report is required; actual results have not yet been supplied.

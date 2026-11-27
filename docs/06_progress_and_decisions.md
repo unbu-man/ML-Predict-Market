@@ -213,3 +213,7 @@ User-supplied report matches all expected counts, 144 fitted model/task combinat
 ## 2026-11-27 — ML-033: Purged walk-forward and locked candidate selection
 
 Added four-process fresh simulation, one selection and two assessment seeds per control, three expanding folds, strict common label cutoff, matched coverage audit, and four globally locked architecture choices based on mean relative Brier/MSE. Four isolated tests passed with actual copied Day 13/14 clustering/model helpers; full GARCH/MTF/CLI and local full run pending. No market data or holdout access. [Chapter XXXIII](33_purged_walkforward.md).
+
+## 2026-11-27 — ML-034: Adaptive delayed-feedback selection
+
+Added rolling 288-matured-origin Brier/MSE routing, minimum 48 and review every 12 eligible origins, separate horizon/task memory and simple benchmark fallbacks. Recompute Chapter XXXIII locked choices from selection folds only; compare on four fresh paths. Five isolated tests passed, full CLI and prior local report pending. No real data, market holdout or trades. [Chapter XXXIV](34_adaptive_selection.md).
