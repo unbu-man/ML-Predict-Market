@@ -157,3 +157,7 @@ Added four fixed Logistic/Ridge models, 12 allowlisted inputs after removing red
 ## 2026-11-26 — ML-026 local supervised results
 
 User supplied feature manifest and M2 report: 1,980 pairs; expected purged splits; all four supervised models completed. Logistic underperformed prevalence on accuracy, Brier, log loss and AUC in every block. Ridge underperformed training mean in every block. Retain as negative-result benchmarks; no direction-model promotion. Prioritize longer authorized history and frozen holdout before serious selection; fixed XGBoost smoke test may proceed as implementation work. [Results](26_supervised_baselines.md#9-user-reported-m2-results--26-november-2026).
+
+## 2026-11-27 — ML-027: Data permission gate and historical infrastructure
+
+Reviewed Coinbase market data terms (section 3, August 2026 update); applicable ML and dissemination permissions not established. Pause real Coinbase-data ML and review public derived documentation. Candidate Bitstamp/Kaggle provenance and rights need review. Added local 1m-to-5m importer with fixed UTC train/validation/reserved-holdout dates, gap preservation, source and output hashes, no holdout export. Five synthetic tests and full synthetic CLI run passed. No market data fetched or published. Existing visibility unchanged. See [Chapter XXVII](27_historical_data_expansion.md).

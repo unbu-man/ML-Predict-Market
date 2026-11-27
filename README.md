@@ -1,5 +1,7 @@
 # ML Predict Market — Multi-Market Signal Research Framework
 
+> **Data rights gate (27 November 2026):** Pause real Coinbase-data ML use and dissemination pending appropriate permission. Use original synthetic fixtures for development; see [Chapter XXVII](docs/27_historical_data_expansion.md).
+
 **Founder / learner project · Started 18 November 2026 · Status: documentation only**
 
 > **Long-term goal:** a market-independent prediction research engine powering three future products: automated non-executing signals, a custom market indicator and a separately risk-gated **paper-first** Auto Trading Bot. First research markets: BTC/USD and XAU/USD. Timeframes: 1m, 5m, 1h, 4h, 1d. No model or product is validated or live.
@@ -207,3 +209,7 @@ Use GitHub-rendered LaTeX: single-dollar delimiters for inline math and fenced `
 ## First local supervised ML results — 26 November 2026
 
 [Chapter XXVI results](docs/26_supervised_baselines.md#9-user-reported-m2-results--26-november-2026): verified-loader local run reported by user, all four models completed, no consistent improvement against simple benchmarks. Longer history and untouched holdout required for serious model selection; XGBoost remains an experimental candidate.
+
+## Historical data expansion
+
+[Chapter XXVII](docs/27_historical_data_expansion.md) defines fixed one-year chronological boundaries, licensing checks and an offline importer. Five synthetic unit tests and a full development-window synthetic CLI run passed. Real data acquisition is blocked until permission and coverage are established. No holdout exported.
