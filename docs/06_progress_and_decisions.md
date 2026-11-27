@@ -177,3 +177,7 @@ User-reported full synthetic run completed: 69,947 training and 17,531 validatio
 ## 2026-11-27 — ML-029: Causal multi-timeframe ablation
 
 Added nine higher-frame features to the 12 base features; complete UTC buckets, segment and block resets, strict target cutoff and matched 21-feature eligibility for all variants. Fixed XGBoost settings; 16 independent fits at 5m/1h. Five isolated tests passed with copied upstream helpers; full manifest integration, Day 10 regression and local CLI pending. No holdout access or real market data used. See [Chapter XXIX](29_multitimeframe.md).
+
+## 2026-11-27 — ML-029 local multi-timeframe result
+
+User-reported full synthetic MTF CLI completed with expected 68,820/16,404 train/validation pairs, 21 features, fixed settings and matching hashes. Full MTF 1h classification accuracy 51.3655%, AUC 0.527637; 18-feature variant has lowest 1h MAE/RMSE, zero-return wins 5m regression. Independent synthetic returns, overlapping hourly labels and multiple comparisons preclude interpreting gains as durable skill. No feature promotion. Next causal GARCH + XGBoost matched ablation with a known-variance positive control. [Results](29_multitimeframe.md#9-user-reported-synthetic-mtf-results--27-november-2026).

@@ -227,3 +227,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## Multi-timeframe XGBoost experiment
 
 [Chapter XXIX](docs/29_multitimeframe.md) implements complete UTC-aligned higher-timeframe buckets, causal as-of alignment and matched 5m/1h/4h/1D cumulative ablations. Five isolated tests passed with copied upstream helpers; full repository CLI integration and local history scores pending. Synthetic only; licensing gate remains active.
+
+## Local synthetic multi-timeframe results
+
+[Chapter XXIX results](docs/29_multitimeframe.md#9-user-reported-synthetic-mtf-results--27-november-2026): expected counts and hashes, 16 fitted variants/tasks completed. Some one-hour scores improved on this synthetic validation block; no durable predictive signal or market advantage established. Next is causal GARCH feature integration and matched ablation with synthetic controls. Data rights gate remains active.

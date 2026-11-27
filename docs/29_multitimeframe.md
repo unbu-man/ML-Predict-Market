@@ -113,3 +113,50 @@ Five new tests passed in an isolated container (complete aligned buckets, as-of 
 Review local synthetic MTF results and ensure expected counts and hashes. Continue with a known-signal synthetic positive control and causal volatility feature ablation (historically fitted GARCH, not a full-sample fitted training path). No market model promotion or feature selection based on synthetic scores. Authorized real-data coverage, untouched real holdout, publication latency, costs, XAU coverage and prospective paper evaluation remain unresolved.
 
 [Chapter XXVIII](28_xgboost.md) | [Chapter XXVII](27_historical_data_expansion.md)
+
+
+## 9. User-reported synthetic MTF results — 27 November 2026
+
+The local report contains the expected 68,820 training and 16,404 validation pairs, 21 features, four cumulative variants and unchanged XGBoost settings. Both source block hashes match Chapter XXVII. Holdout_exported is false. This is user-reported evidence of successful full CLI execution; raw CSVs, individual predictions and local test output were not independently inspected.
+
+### Classification
+
+| Horizon | Variant | Accuracy | Brier | Log loss | ROC-AUC |
+|---|---|---:|---:|---:|---:|
+| 5m | Prevalence | 0.495001 | 0.250003 | 0.693153 | 0.500000 |
+| 5m | 5m_only | 0.494270 | 0.250127 | 0.693401 | 0.496105 |
+| 5m | plus_1h | 0.497744 | 0.250103 | 0.693352 | 0.497445 |
+| 5m | plus_4h | 0.497927 | 0.250106 | 0.693359 | 0.500862 |
+| 5m | plus_1d | 0.498537 | 0.250126 | 0.693401 | 0.500125 |
+| 1h | Prevalence | 0.484760 | 0.250060 | 0.693266 | 0.500000 |
+| 1h | 5m_only | 0.491344 | 0.250907 | 0.694973 | 0.486650 |
+| 1h | plus_1h | 0.486528 | 0.250799 | 0.694758 | 0.492064 |
+| 1h | plus_4h | 0.510059 | 0.249720 | 0.692585 | 0.519880 |
+| 1h | plus_1d | 0.513655 | 0.249618 | 0.692383 | 0.527637 |
+
+Training UP rates: 0.5002615519 (5m), 0.5018453938 (1h). Both prevalence forecasts predict UP at the fixed threshold. All learned variants have worse 5m probability losses than prevalence. The full MTF 1h variant improves accuracy by about 2.23 percentage points over matched 5m-only XGBoost and 2.89 points over prevalence; Brier, log loss and AUC also improve on this particular validation block.
+
+### Regression
+
+| Horizon | Variant | MAE | RMSE | Sign accuracy |
+|---|---|---:|---:|---:|
+| 5m | Zero | 0.000899706 | 0.001129797 | 0.504999 |
+| 5m | Train mean | 0.000899708 | 0.001129800 | 0.495001 |
+| 5m | 5m_only | 0.000900026 | 0.001129968 | 0.502926 |
+| 5m | plus_1h | 0.000900032 | 0.001129960 | 0.498232 |
+| 5m | plus_4h | 0.000899978 | 0.001129934 | 0.498842 |
+| 5m | plus_1d | 0.000900021 | 0.001129944 | 0.499329 |
+| 1h | Zero | 0.003151525 | 0.003947176 | 0.515240 |
+| 1h | Train mean | 0.003151590 | 0.003947291 | 0.484760 |
+| 1h | 5m_only | 0.003157916 | 0.003953843 | 0.490734 |
+| 1h | plus_1h | 0.003161744 | 0.003957595 | 0.493233 |
+| 1h | plus_4h | 0.003148047 | 0.003943447 | 0.503597 |
+| 1h | plus_1d | 0.003149267 | 0.003947232 | 0.513655 |
+
+Units are unscaled log returns. Zero return has the lowest 5m errors and highest sign accuracy at both horizons. The 18-feature variant has the lowest 1h MAE and RMSE; its improvement versus zero-return RMSE is only about 0.0945%. The full 21-feature variant has slightly higher 1h RMSE than zero return.
+
+### Interpretation and next research gate
+
+The generator uses independent Gaussian minute return innovations. Therefore, the observed 1h classification gains are not evidence that MTF predicts real markets or that the simulated process has a durable conditional mean signal. Finite-sample variation, overlapping outcomes and multiple comparisons can explain apparent gains; an unexpected result should also motivate further leakage checks, not automatic promotion. Do not select a production feature group from these results. The 5m-only comparison here uses matched origins, not Chapter XXVIII's larger sample.
+
+Next: Chapter XXX, causal GARCH + XGBoost feature ablation. Keep fixed MTF configurations for comparison, not a winner chosen from this synthetic run. Generate one-step variance forecasts using parameters estimated strictly from historical prefixes, with a prespecified refit cadence and causal recursive updates; reset at gaps, document failure and warmup, and restrict every comparison to matched eligible anchors. Compare base, base + rolling-volatility benchmark, and base + GARCH, with MTF variants where appropriate. Do not use a full-training fitted variance series as if its parameters were known at past origins. Include a separately designed synthetic positive-control fixture with a known predictable variance process; independent-return synthetic data remain a negative control. No market skill, validated real-time availability, authorized real-data coverage, final holdout evaluation, transaction-cost assessment or trading performance established.
