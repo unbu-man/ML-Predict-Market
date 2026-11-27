@@ -193,3 +193,7 @@ Added zero-mean GARCH using 1,440 observed returns per fit, refit every 2,880, 2
 ## 2026-11-27 — ML-030 local hybrid results
 
 User-reported complete synthetic experiment: counts 68,531/16,115 and 7,187/4,307, 35 refits with no failures. Positive-control GARCH reduces variance MSE by 17.57% vs refit constant, 16.20% vs rolling RMS; negative-control constant wins. Direction/return ablations do not demonstrate a reliable GARCH benefit. Retain volatility candidate, no market promotion. Local tests/raw files not independently inspected. Next K-Means/GMM and known-regime/direction positive control. [Results](30_hybrid_garch_xgboost.md#8-user-reported-hybrid-results--27-november-2026).
+
+## 2026-11-27 — ML-031: Regime discovery and directional control
+
+Added training-only scaling and K-Means/GMM on four causal MTF features, 21/24/24-feature matched XGBoost ablation, independent-return negative and persistent Markov-regime directional positive control, scoring-only ARI. Five new isolated unit tests passed; complete CLI and Mac results pending. GARCH excluded for isolated regime effect; joint ablation deferred. No real data, holdout or model promotion. [Chapter XXXI](31_market_regimes.md).

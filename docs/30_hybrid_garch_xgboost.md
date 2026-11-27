@@ -219,3 +219,7 @@ E[r_{t+1}^2\mid\mathcal F_t]&=v_{t+1}\\
 ```
 
 Conditional variance can be predicted without conditional direction being predictable. Symmetry of future innovations also implies a symmetric aggregate return distribution in this zero-mean GARCH simulator. This is a simulator property, not an assertion about BTC/USD. Retain GARCH as a variance-research candidate and future risk/uncertainty input, not as an established directional feature. Next Chapter XXXI: training-only K-Means/GMM regime features, with train-only scaling and held-fixed fitted transforms on validation, matched feature ablations, and a separately generated known-regime/direction positive control before claiming learnability of directional structure. Do not assign economic meanings to arbitrary cluster IDs. Real-data authorization, XAU coverage, measured latency, cost-aware evaluation and untouched real holdout remain unresolved.
+
+## Follow-up
+
+[Chapter XXXI](31_market_regimes.md) implements training-only K-Means/GMM features and known-direction synthetic control, with GARCH held out for an isolated regime ablation. Local full CLI pending.

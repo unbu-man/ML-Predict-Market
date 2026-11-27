@@ -241,3 +241,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## Local synthetic hybrid results
 
 [Chapter XXX results](docs/30_hybrid_garch_xgboost.md#8-user-reported-hybrid-results--27-november-2026): 35 successful reported refits, GARCH improves variance MSE 17.57% vs refit constant on known-GARCH control but not on independent returns. No directional promotion or real market performance inferred. Next training-only regime discovery and direction positive control; licensing gate remains active.
+
+## Unsupervised regime features
+
+[Chapter XXXI](docs/31_market_regimes.md) adds training-only K-Means and diagonal GMM, hard/soft encodings, matched XGBoost ablations and a known-direction Markov-regime positive control. Five isolated tests passed; full local CLI pending. Synthetic only; licensing gate remains active.
