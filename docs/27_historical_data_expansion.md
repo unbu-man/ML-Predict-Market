@@ -78,3 +78,7 @@ Reported train.csv SHA256: `11a012ec9326c054be0858b95fc272ae00013285efbcb76f9f94
 Reported validation.csv SHA256: `603c1b352aad4491a32bfecd831cc58a24e78b088a374f3d871185078ef3e71e`.
 
 The dates and counts match the frozen development plan. This is user-reported manifest evidence, not independent inspection of the CSVs or local unit-test results. The synthetic historical infrastructure milestone is complete; authorized real-data coverage remains blocked. Next: provider-neutral audit and gap-aware feature/label generation confined to each block, then fixed XGBoost classifier/regressor and matched Logistic/Ridge/no-skill comparisons on synthetic data only. No holdout access, real-data expansion, model promotion or trading claim.
+
+## Follow-up
+
+[Chapter XXVIII](28_xgboost.md) now implements the synthetic-only gap-aware matched XGBoost experiment. The real-data permission gate remains active.

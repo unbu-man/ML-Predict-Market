@@ -165,3 +165,7 @@ Reviewed Coinbase market data terms (section 3, August 2026 update); applicable 
 ## 2026-11-27 — ML-027 local synthetic pipeline result
 
 User-reported manifest matches plan: 69,984 training and 17,568 validation 5m synthetic candles, no missing bars, no holdout exported. Recorded checksums in [Chapter XXVII](27_historical_data_expansion.md#6-user-reported-synthetic-pipeline-result--27-november-2026). Software milestone only; raw files and local tests not independently verified. Next provider-neutral gap-aware features and synthetic XGBoost comparison. Real data permissions and coverage remain unresolved.
+
+## 2026-11-27 — ML-028: Gap-aware XGBoost software experiment
+
+Added synthetic-only manifest/checksum audit, segment-reset feature windows, strict boundary cutoff shared by horizons, and fixed shallow XGBoost classifier/regressor alongside matched M2 and no-skill benchmarks. Five synthetic fixture tests passed in the assistant container. Full local history run pending, no real data or holdout used. See [Chapter XXVIII](28_xgboost.md).
