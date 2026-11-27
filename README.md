@@ -213,3 +213,5 @@ Use GitHub-rendered LaTeX: single-dollar delimiters for inline math and fenced `
 ## Historical data expansion
 
 [Chapter XXVII](docs/27_historical_data_expansion.md) defines fixed one-year chronological boundaries, licensing checks and an offline importer. Five synthetic unit tests and a full development-window synthetic CLI run passed. Real data acquisition is blocked until permission and coverage are established. No holdout exported.
+
+The user subsequently reported a successful local synthetic export of 87,552 five-minute candles, zero missing, holdout excluded. [Chapter XXVII local result](docs/27_historical_data_expansion.md#6-user-reported-synthetic-pipeline-result--27-november-2026). This is software testing only; next is gap-aware feature generation and synthetic XGBoost.

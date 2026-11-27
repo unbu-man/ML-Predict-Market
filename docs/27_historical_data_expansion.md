@@ -62,3 +62,19 @@ For a real authorized file only, the importer accepts --csv, --provider and --pe
 After confirming rights and actual coverage, add a provider-neutral audit and gap-aware causal feature pipeline for the separate development blocks; the older Coinbase-specific audit and relative-split examples are not directly compatible with this export. Keep chronological train and validation boundaries, purge label availability across boundaries, fit training-only transforms and use matched origins across models. Implement XGBoost on synthetic fixtures while permission is unresolved. Later repeat M0/M1/M2 and GARCH on authorized data, then fixed M3 XGBoost, purged walk-forward validation, and causal volatility/multitimeframe ablations. No reliable trading prediction, XAU access, live feed or commercial rights have been demonstrated.
 
 [Chapter XXVI](26_supervised_baselines.md)
+
+## 6. User-reported synthetic pipeline result — 27 November 2026
+
+The user supplied the local manifest for `data/history/synthetic_1y_plan`. Provider synthetic, original simulated data, source_sha256 null, historical publication times unverified. No holdout exported.
+
+| Block | Expected | Received | Missing | Longest contiguous run |
+|---|---:|---:|---:|---:|
+| Train | 69,984 | 69,984 | 0 | 69,984 |
+| Validation | 17,568 | 17,568 | 0 | 17,568 |
+| Total | 87,552 | 87,552 | 0 | — |
+
+Reported train.csv SHA256: `11a012ec9326c054be0858b95fc272ae00013285efbcb76f9f9474dcaed7699c`.
+
+Reported validation.csv SHA256: `603c1b352aad4491a32bfecd831cc58a24e78b088a374f3d871185078ef3e71e`.
+
+The dates and counts match the frozen development plan. This is user-reported manifest evidence, not independent inspection of the CSVs or local unit-test results. The synthetic historical infrastructure milestone is complete; authorized real-data coverage remains blocked. Next: provider-neutral audit and gap-aware feature/label generation confined to each block, then fixed XGBoost classifier/regressor and matched Logistic/Ridge/no-skill comparisons on synthetic data only. No holdout access, real-data expansion, model promotion or trading claim.
