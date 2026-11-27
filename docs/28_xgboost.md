@@ -136,3 +136,40 @@ Five synthetic fixture tests executed and passed in the assistant container: fea
 Review the local synthetic report as a pipeline sanity check. Obtain appropriate authorization and longer real-data coverage before implementing a separately reviewed real-data mode. Do not infer market skill or choose features from synthetic metrics. Later compare all models on identical real-data purged walk-forward folds; add multi-timeframe features and causal GARCH forecasts in controlled ablations, and retain a fresh untouched holdout. No live orders, no market-data downloads.
 
 [Chapter XXVII](27_historical_data_expansion.md) | [Chapter XXVI](26_supervised_baselines.md)
+
+
+## 9. User-reported synthetic XGBoost results — 27 November 2026
+
+The user pasted the local report for the full synthetic development dataset. The reported source-block checksums match Chapter XXVII, settings match the fixed experiment, and the common eligible counts match the design (69,947 train and 17,531 validation). Holdout_exported is false. These are user-reported software-test results; raw files, individual predictions and local unit-test output were not independently inspected.
+
+### Classification metrics
+
+| Horizon | Model | Accuracy | Brier | Log loss | ROC-AUC |
+|---|---|---:|---:|---:|---:|
+| 5m | Prevalence | 0.494495 | 0.250001 | 0.693149 | 0.500000 |
+| 5m | Logistic | 0.494838 | 0.250173 | 0.693493 | 0.494095 |
+| 5m | XGBoost | 0.499059 | 0.250133 | 0.693414 | 0.496692 |
+| 1h | Prevalence | 0.482859 | 0.250051 | 0.693249 | 0.500000 |
+| 1h | Logistic | 0.503166 | 0.250210 | 0.693567 | 0.500016 |
+| 1h | XGBoost | 0.490160 | 0.250826 | 0.694813 | 0.488737 |
+
+Training UP proportions: 0.5000643344 (5m), 0.5014225056 (1h). Fixed-threshold accuracy is near chance; the prevalence forecast predicts UP in both cases. The learned models have worse Brier and log loss at both horizons. No robust information advantage is established by the small accuracy differences.
+
+### Regression metrics
+
+| Horizon | Model | MAE | RMSE | Sign accuracy |
+|---|---|---:|---:|---:|
+| 5m | Zero | 0.000896841 | 0.001126677 | 0.505505 |
+| 5m | Train mean | 0.000896839 | 0.001126675 | 0.505505 |
+| 5m | Ridge | 0.000897052 | 0.001126873 | 0.496606 |
+| 5m | XGBoost | 0.000897115 | 0.001126818 | 0.500713 |
+| 1h | Zero | 0.003124030 | 0.003917244 | 0.517141 |
+| 1h | Train mean | 0.003123983 | 0.003917172 | 0.517141 |
+| 1h | Ridge | 0.003125669 | 0.003919099 | 0.505562 |
+| 1h | XGBoost | 0.003129150 | 0.003922346 | 0.496207 |
+
+Unscaled log-return units. Training mean has the lowest MAE and RMSE at both horizons. This is consistent with the synthetic generator's independent random minute log returns. Overlapping 1h targets are dependent; do not interpret the 17,531 rows as independent trials. No inference about actual BTC prediction or trading profitability is justified. A negative-control result is useful but cannot by itself prove that every possible leakage bug is absent.
+
+### Next research gate
+
+M3 software execution milestone complete; no model promoted. Add a causal multi-timeframe (MTF) module: aggregate 5m bars into UTC-aligned complete 1h, 4h and 1D buckets; omit incomplete buckets; reset feature windows at gaps and block boundaries; as-of join only closed and assumed-available higher-timeframe bars. Keep the 5m prediction origins and 5m/1h targets unchanged. Compare 5m-only and MTF variants on exactly the same eligible origins, with fixed settings and train-only transforms. The current export has no 1m bars; defer 1m inputs until a separate permitted source/export exists. Synthetic-only testing continues; consider a separately designed positive-control fixture with a known causal signal to test learnability, not market skill. No final holdout, live orders or authorized real-data expansion.

@@ -219,3 +219,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## XGBoost synthetic experiment
 
 [Chapter XXVIII](docs/28_xgboost.md) adds gap-aware vectorized features, matched fixed Logistic/Ridge and XGBoost experiments at 5m/1h, and rendered objective/gradient/Hessian/leaf derivations. Five synthetic fixture tests passed in the assistant container. Real-data use remains blocked pending authorization; holdout excluded.
+
+## Local synthetic XGBoost results
+
+[Chapter XXVIII results](docs/28_xgboost.md#9-user-reported-synthetic-xgboost-results--27-november-2026) records 69,947 training and 17,531 validation pairs. XGBoost completed; simple benchmarks retain lower probability/return losses on synthetic independent innovations. Software milestone only. Next is causal multi-timeframe alignment and matched ablation; real-data permissions remain unresolved.

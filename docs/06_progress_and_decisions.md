@@ -169,3 +169,7 @@ User-reported manifest matches plan: 69,984 training and 17,568 validation 5m sy
 ## 2026-11-27 — ML-028: Gap-aware XGBoost software experiment
 
 Added synthetic-only manifest/checksum audit, segment-reset feature windows, strict boundary cutoff shared by horizons, and fixed shallow XGBoost classifier/regressor alongside matched M2 and no-skill benchmarks. Five synthetic fixture tests passed in the assistant container. Full local history run pending, no real data or holdout used. See [Chapter XXVIII](28_xgboost.md).
+
+## 2026-11-27 — ML-028 local XGBoost result
+
+User-reported full synthetic run completed: 69,947 training and 17,531 validation pairs, expected hashes/settings, holdout unexported. Both learned classifiers lose to prevalence on probability losses; training mean beats learned regressors on MAE/RMSE. Expected negative-control behavior, no market skill demonstrated. Next: causal 5m/1h/4h/1D alignment and matched MTF ablation, synthetic only. 1m inputs deferred because not present in exported blocks. [Results](28_xgboost.md#9-user-reported-synthetic-xgboost-results--27-november-2026).
