@@ -173,3 +173,7 @@ Unscaled log-return units. Training mean has the lowest MAE and RMSE at both hor
 ### Next research gate
 
 M3 software execution milestone complete; no model promoted. Add a causal multi-timeframe (MTF) module: aggregate 5m bars into UTC-aligned complete 1h, 4h and 1D buckets; omit incomplete buckets; reset feature windows at gaps and block boundaries; as-of join only closed and assumed-available higher-timeframe bars. Keep the 5m prediction origins and 5m/1h targets unchanged. Compare 5m-only and MTF variants on exactly the same eligible origins, with fixed settings and train-only transforms. The current export has no 1m bars; defer 1m inputs until a separate permitted source/export exists. Synthetic-only testing continues; consider a separately designed positive-control fixture with a known causal signal to test learnability, not market skill. No final holdout, live orders or authorized real-data expansion.
+
+## Follow-up
+
+[Chapter XXIX](29_multitimeframe.md) implements the synthetic matched multi-timeframe ablation with 21 features. Local execution pending.

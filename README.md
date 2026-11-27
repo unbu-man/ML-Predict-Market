@@ -223,3 +223,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## Local synthetic XGBoost results
 
 [Chapter XXVIII results](docs/28_xgboost.md#9-user-reported-synthetic-xgboost-results--27-november-2026) records 69,947 training and 17,531 validation pairs. XGBoost completed; simple benchmarks retain lower probability/return losses on synthetic independent innovations. Software milestone only. Next is causal multi-timeframe alignment and matched ablation; real-data permissions remain unresolved.
+
+## Multi-timeframe XGBoost experiment
+
+[Chapter XXIX](docs/29_multitimeframe.md) implements complete UTC-aligned higher-timeframe buckets, causal as-of alignment and matched 5m/1h/4h/1D cumulative ablations. Five isolated tests passed with copied upstream helpers; full repository CLI integration and local history scores pending. Synthetic only; licensing gate remains active.

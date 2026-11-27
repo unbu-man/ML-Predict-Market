@@ -91,7 +91,7 @@ def build(segments, stop, delay):
     return np.concatenate(anchors),np.vstack(xs),{h:np.concatenate(v) for h,v in ys.items()}
 
 
-def load(folder, delay):
+def load(folder, delay, builder=build):
     m = json.loads((folder/"manifest.json").read_text())
     if (m["provider"]!="synthetic" or m["scope"]!="synthetic pipeline test only"
             or m["symbol"]!="BTC-USD" or m["interval_seconds"]!=300 or m["holdout_exported"] is not False
@@ -102,7 +102,7 @@ def load(folder, delay):
     a,b = m["blocks"]["train"],m["blocks"]["validation"]
     if (a["start_utc"],a["end_exclusive_utc"],b["end_exclusive_utc"],m["holdout_end_exclusive_utc"])!=bounds or b["start_utc"]!=bounds[1] or m["holdout_start_utc"]!=bounds[2]:
         raise ValueError("Frozen dates changed")
-    return m, {name:build(read_block(folder,name,meta),epoch(meta["end_exclusive_utc"]),delay)
+    return m, {name:builder(read_block(folder,name,meta),epoch(meta["end_exclusive_utc"]),delay)
                for name,meta in m["blocks"].items()}
 
 

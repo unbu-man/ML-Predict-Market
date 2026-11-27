@@ -173,3 +173,7 @@ Added synthetic-only manifest/checksum audit, segment-reset feature windows, str
 ## 2026-11-27 — ML-028 local XGBoost result
 
 User-reported full synthetic run completed: 69,947 training and 17,531 validation pairs, expected hashes/settings, holdout unexported. Both learned classifiers lose to prevalence on probability losses; training mean beats learned regressors on MAE/RMSE. Expected negative-control behavior, no market skill demonstrated. Next: causal 5m/1h/4h/1D alignment and matched MTF ablation, synthetic only. 1m inputs deferred because not present in exported blocks. [Results](28_xgboost.md#9-user-reported-synthetic-xgboost-results--27-november-2026).
+
+## 2026-11-27 — ML-029: Causal multi-timeframe ablation
+
+Added nine higher-frame features to the 12 base features; complete UTC buckets, segment and block resets, strict target cutoff and matched 21-feature eligibility for all variants. Fixed XGBoost settings; 16 independent fits at 5m/1h. Five isolated tests passed with copied upstream helpers; full manifest integration, Day 10 regression and local CLI pending. No holdout access or real market data used. See [Chapter XXIX](29_multitimeframe.md).
