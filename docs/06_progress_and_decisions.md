@@ -209,3 +209,7 @@ Added nine matched MTF/volatility/regime variants, four synthetic controls, Brie
 ## 2026-11-27 — ML-032 local factorial results
 
 User-supplied report matches all expected counts, 144 fitted model/task combinations and 47 successful GARCH refits. Directional 1h best accuracy 71.63% (GARCH+GMM); joint 1h best accuracy/Brier rolling-only, lowest RMSE MTF-only. Joint GMM ARI .1676, direction .8265. GARCH improves second-moment losses on structured controls but no universal direction benefit. No promotion. Next fresh-seed purged walk-forward, with separate selection/evaluation periods. [Results](32_combined_hybrid.md#8-user-reported-factorial-results--27-november-2026).
+
+## 2026-11-27 — ML-033: Purged walk-forward and locked candidate selection
+
+Added four-process fresh simulation, one selection and two assessment seeds per control, three expanding folds, strict common label cutoff, matched coverage audit, and four globally locked architecture choices based on mean relative Brier/MSE. Four isolated tests passed with actual copied Day 13/14 clustering/model helpers; full GARCH/MTF/CLI and local full run pending. No market data or holdout access. [Chapter XXXIII](33_purged_walkforward.md).

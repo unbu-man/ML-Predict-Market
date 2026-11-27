@@ -201,3 +201,7 @@ A negative interaction can occur even when the combined model is worse than the 
 ### Research decision
 
 Retain MTF as the main candidate baseline; preserve all nine fixed candidates rather than choose a winner from these inspected simulations. Keep GARCH as a volatility/second-moment research candidate; no demonstrated universal directional benefit. Chapter XXXIII should implement purged chronological walk-forward on fresh independently seeded synthetic paths, with train-only scaling/clustering and supervised fits, label availability strictly before each training cutoff, disjoint evaluation origins, and causal GARCH updates. Report fold-level probability/return losses, matched baselines, variability, coverage and failure counts. Separate candidate selection from later evaluation; do not tune on evaluation blocks. Explicitly distinguish dependent folds and overlapping outcomes from independent simulation paths. No real-data permission, XAU coverage, measured availability, execution costs, final market holdout or prospective paper trading established.
+
+## Follow-up
+
+[Chapter XXXIII](33_purged_walkforward.md) implements fresh seeded purged walk-forward selection and separate assessment. Full local execution pending.

@@ -257,3 +257,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## Local synthetic factorial results
 
 [Chapter XXXII results](docs/32_combined_hybrid.md#8-user-reported-factorial-results--27-november-2026) records four controls, nine configurations, 144 fitted tasks and 47 reported successful refits. The full hybrid is not consistently best; joint 1h rolling-only wins probability losses and MTF alone wins RMSE. No market skill or model promotion. Next purged walk-forward on fresh simulation paths; licensing gate remains active.
+
+## Purged walk-forward and locked selection
+
+[Chapter XXXIII](docs/33_purged_walkforward.md) implements 12 fresh synthetic paths, 36 expanding folds, matched nine-way comparison and selection locked before separate assessment. Four isolated tests passed; full upstream integration and 1296-fit local run pending. Synthetic only; rights gate remains active.
