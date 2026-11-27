@@ -181,3 +181,7 @@ Added nine higher-frame features to the 12 base features; complete UTC buckets, 
 ## 2026-11-27 — ML-029 local multi-timeframe result
 
 User-reported full synthetic MTF CLI completed with expected 68,820/16,404 train/validation pairs, 21 features, fixed settings and matching hashes. Full MTF 1h classification accuracy 51.3655%, AUC 0.527637; 18-feature variant has lowest 1h MAE/RMSE, zero-return wins 5m regression. Independent synthetic returns, overlapping hourly labels and multiple comparisons preclude interpreting gains as durable skill. No feature promotion. Next causal GARCH + XGBoost matched ablation with a known-variance positive control. [Results](29_multitimeframe.md#9-user-reported-synthetic-mtf-results--27-november-2026).
+
+## 2026-11-27 — Mathematics documentation convention
+
+User requested that every formula taught be preserved in GitHub. Added [mathematical reference](mathematical_reference.md) for general equations through Chapter XXIX and added the proposed hybrid feature equations to the Chapter XXIX preview. Future chapters must contain rendered formulas, definitions, assumptions, derivations and implementation links, updating the reference as needed. Existing experiment-specific numeric results remain in their chapters subject to the data rights gate. No model or experiment code changed.

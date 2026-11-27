@@ -31,6 +31,8 @@
 
 ## Documentation (start here)
 
+**[Mathematical reference — all core research equations](docs/mathematical_reference.md).** Read this as a formula handbook alongside the chapter-by-chapter derivations and code. From now on, each mathematical lesson must preserve its formulas, notation, assumptions, worked examples and implementation links in GitHub-rendered math; update the reference as new topics are introduced.
+
 | Chapter | Purpose |
 |---|---|
 | [01 — Project vision](docs/01_vision_and_scope.md) | Define the products, users, boundaries and measurable success |

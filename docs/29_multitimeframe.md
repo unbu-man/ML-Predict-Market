@@ -160,3 +160,29 @@ Units are unscaled log returns. Zero return has the lowest 5m errors and highest
 The generator uses independent Gaussian minute return innovations. Therefore, the observed 1h classification gains are not evidence that MTF predicts real markets or that the simulated process has a durable conditional mean signal. Finite-sample variation, overlapping outcomes and multiple comparisons can explain apparent gains; an unexpected result should also motivate further leakage checks, not automatic promotion. Do not select a production feature group from these results. The 5m-only comparison here uses matched origins, not Chapter XXVIII's larger sample.
 
 Next: Chapter XXX, causal GARCH + XGBoost feature ablation. Keep fixed MTF configurations for comparison, not a winner chosen from this synthetic run. Generate one-step variance forecasts using parameters estimated strictly from historical prefixes, with a prespecified refit cadence and causal recursive updates; reset at gaps, document failure and warmup, and restrict every comparison to matched eligible anchors. Compare base, base + rolling-volatility benchmark, and base + GARCH, with MTF variants where appropriate. Do not use a full-training fitted variance series as if its parameters were known at past origins. Include a separately designed synthetic positive-control fixture with a known predictable variance process; independent-return synthetic data remain a negative control. No market skill, validated real-time availability, authorized real-data coverage, final holdout evaluation, transaction-cost assessment or trading performance established.
+
+## 10. Preview — hybrid GARCH + XGBoost
+
+The next experiment introduces a one-step conditional volatility forecast as a candidate feature, not a proven direction model:
+
+
+```math
+\widehat\sigma^2_{t+1\mid t}=\widehat\omega_t+\widehat\alpha_{1,t}\varepsilon_t^2+\widehat\beta_{1,t}\widehat\sigma_t^2
+```
+
+
+
+```math
+X_t^{\mathrm{hybrid}}=\begin{bmatrix}X_t^{5m}\\X_t^{1h}\\X_t^{4h}\\X_t^{1D}\\\widehat\sigma_{t+1\mid t}\end{bmatrix}
+```
+
+
+
+```math
+\widehat p_{t,h}\approx P(Y_{t,h}>0\mid X_t^{\mathrm{hybrid}}),\qquad
+\widehat Y_{t,h}\approx E[Y_{t,h}\mid X_t^{\mathrm{hybrid}}]
+```
+
+Parameters must be fit using historical prefixes and updated causally. The volatility feature is a one-step standard deviation, including for the 1h prediction task. The proposed vector has 22 features if all 21 MTF features and one volatility feature are included. Compare with and without GARCH and rolling-volatility controls on matched origins. No model promotion or implementation in this preview.
+
+[Mathematical reference](mathematical_reference.md)
