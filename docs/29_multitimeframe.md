@@ -186,3 +186,7 @@ X_t^{\mathrm{hybrid}}=\begin{bmatrix}X_t^{5m}\\X_t^{1h}\\X_t^{4h}\\X_t^{1D}\\\wi
 Parameters must be fit using historical prefixes and updated causally. The volatility feature is a one-step standard deviation, including for the 1h prediction task. The proposed vector has 22 features if all 21 MTF features and one volatility feature are included. Compare with and without GARCH and rolling-volatility controls on matched origins. No model promotion or implementation in this preview.
 
 [Mathematical reference](mathematical_reference.md)
+
+## Follow-up
+
+[Chapter XXX](30_hybrid_garch_xgboost.md) implements the synthetic-only causal volatility feature ablation; zero-mean GARCH is used for the two controlled processes. Local tests and full evaluation pending.

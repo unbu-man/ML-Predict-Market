@@ -185,3 +185,7 @@ User-reported full synthetic MTF CLI completed with expected 68,820/16,404 train
 ## 2026-11-27 — Mathematics documentation convention
 
 User requested that every formula taught be preserved in GitHub. Added [mathematical reference](mathematical_reference.md) for general equations through Chapter XXIX and added the proposed hybrid feature equations to the Chapter XXIX preview. Future chapters must contain rendered formulas, definitions, assumptions, derivations and implementation links, updating the reference as needed. Existing experiment-specific numeric results remain in their chapters subject to the data rights gate. No model or experiment code changed.
+
+## 2026-11-27 — ML-030: Causal hybrid feature implementation
+
+Added zero-mean GARCH using 1,440 observed returns per fit, refit every 2,880, 288-return rolling RMS control, recursive state updates and gap resets. Matched six XGBoost feature groups per horizon/task, known-GARCH positive and independent-innovation negative controls. Five tests supplied, not executed; direct container clone failed due to DNS. Local reports pending. No real-data use or holdout. [Chapter XXX](30_hybrid_garch_xgboost.md).

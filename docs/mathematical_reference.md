@@ -380,3 +380,21 @@ W and L are mean gross winning and losing outcomes (L nonpositive), p is trade w
 - Do not treat undocumented formulas or synthetic results as a validated market strategy.
 
 This reference covers the main general equations through Chapter XXIX and the Chapter XXX hybrid preview. It is not a verbatim transcript of all previous chats. Future formulas and corrections should be added alongside each implementation.
+
+## 12. Chapter XXX — Implemented causal volatility features and controls
+
+See [Chapter XXX](30_hybrid_garch_xgboost.md) for the complete derivation, worked example and implementation. The controls fix conditional mean at zero, so returns are innovations. Fit using a rolling historical prefix of W=1440 returns and refit every 2880. No fitted parameters from future observations enter earlier rows.
+
+
+```math
+\begin{aligned}
+s_t^2&=\frac1W\sum_{i=t-W+1}^{t}r_i^2\\
+\widehat\sigma_{t+1\mid t}^{\mathrm{rolling}}&=\sqrt{\frac1{288}\sum_{i=0}^{287}r_{t-i}^2}\\
+\widehat\sigma_{t+1\mid t}^{\mathrm{GARCH}}&=\sqrt{\widehat\omega+\widehat\alpha r_t^2+\widehat\beta\widehat\sigma_t^2}\\
+r_t&=\sqrt{v_t}z_t,\quad z_t\overset{\mathrm{iid}}{\sim}N(0,1)\\
+v_{t+1}&=10^{-7}+0.12r_t^2+0.85v_t\\
+v_\infty&=10^{-7}/(1-0.12-0.85)
+\end{aligned}
+```
+
+The last three lines define a synthetic positive control with predictable variance, not predictable sign. The oracle variance is scoring-only. The independent synthetic control remains the negative control. For complete aligned blocks with successful refits, common eligible count is N minus 1440 warmup indices and 13 final reserved origins. See Chapter XXX for limitations and the matched comparison.

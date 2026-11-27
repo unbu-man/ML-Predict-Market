@@ -233,3 +233,7 @@ The user subsequently reported a successful local synthetic export of 87,552 fiv
 ## Local synthetic multi-timeframe results
 
 [Chapter XXIX results](docs/29_multitimeframe.md#9-user-reported-synthetic-mtf-results--27-november-2026): expected counts and hashes, 16 fitted variants/tasks completed. Some one-hour scores improved on this synthetic validation block; no durable predictive signal or market advantage established. Next is causal GARCH feature integration and matched ablation with synthetic controls. Data rights gate remains active.
+
+## Causal hybrid GARCH + XGBoost
+
+[Chapter XXX](docs/30_hybrid_garch_xgboost.md) implements historical-window zero-mean GARCH refits, rolling-RMS and constant benchmarks, matched base/MTF ablations, and independent-innovation and known-GARCH synthetic controls. Five tests supplied, execution pending; no market-skill claims. Data permissions remain unresolved.
